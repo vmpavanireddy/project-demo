@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Page</title>
+    <style>
+        body { 
+            font-family: Arial;
+            margin: 0;
+            display: flex;
+        }
+
+        .navbar {
+            width: 200px;
+            background-color: #333;
+            height: 100vh;
+            padding-top: 20px;
+        }
+
+        .navbar a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        form {
+            width: 350px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: 40px;
+            border-radius: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        input[type=submit] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="news.html">News</a>
+    <a href="calculator.html">Calculator</a>
+</div>
+
+<div class="content">
+    <h2>Registration Form</h2>
+
+    <form action="index.html" method="get">
+        <label>Name:</label>
+        <input type="text" required>
+
+        <label>Email:</label>
+        <input type="email" required>
+
+        <label>Password:</label>
+        <input type="password" required>
+
+        <input type="submit" value="Register">
+    </form>
+</div>
+
+</body>
+</html>
