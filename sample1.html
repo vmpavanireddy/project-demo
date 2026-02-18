@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
 <head>
+    <meta charset="UTF-8">
     <title>Gamer</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="mystyle.css">
@@ -57,13 +57,43 @@ p {
   font-style: italic;
 
       }
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+width: 130px;
+  height: 100%; 
+  background-color: #035b84;
+   position: fixed;
+   overflow: auto;
+}
+
+.navbar li a {
+  display: block;
+  color: rgb(11, 34, 85);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.navbar a:hover {
+  background-color: #c17f7f;
+}
     </style>
 </head>
 
 <body style="background-color:powderblue;"  >
+  <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#genre">genre</a></li>
+                <li><a href="#game">game</a></li>
+            </ul>
+        </nav>
+        <div style="margin-left:130px;padding:1px 16px;height:1000px;">
+
+        <section id="home">
     <h1 style="text-align:center;">Welcome</h1>
     <h2 style="font-family:courier;">About Gaming</h2>
-      <p style="font-size:160%;" >
+      <p style="font-size:160%;" ></p>
         <p id="para1" class="solid">Lets goo ✔️</p>
         <b>The act of playing games</b>,as in:<br>
 Legalized gambling, playing games of chance for money, often referred to in law as <strong>"gaming"</strong><br>
@@ -74,6 +104,8 @@ Legalized gambling, playing games of chance for money, often referred to in law 
 <sup>Video game culture</sup><br>
 Gaming, a character in 2026 video game Genshin Impact<br>
     </p>
+    </section>
+     <section id="genre">
     <br>
     <table style="width:20%">
   <tr>
@@ -121,9 +153,9 @@ Gaming, a character in 2026 video game Genshin Impact<br>
 </dl>
 <br>
 <button onclick="alert('I Heard you are a player.Nice to meet you Iam the coach!')" style="background-color: #059862; color: white; padding: 10px 20px; border: none; border-radius: 5px;">SHOULD KNOW</button>
-
-<br>
-<p style="font-size:30px">Lets &#71;&#79; &#128151</p> 
+</section>
+ <section id="game">
+  <p style="font-size:30px">Lets &#71;&#79; &#128151</p> 
 <br>
 <img src="Qp-eRg.gif" alt="Computer man" style="width:480px;height:480px;">
 <br>
@@ -147,14 +179,17 @@ Survival & Horror: Focuses on resource management, tension, and suspense.<br>
 <address style="border: 2px solid Tomato;">Classifications:<br>
 Platform: PC, Console (PlayStation, Xbox, Switch), Mobile, VR.<br>
 Monetization: Free-to-Play (F2P), Premium (Paid), Subscription.<br></address>
+
     </p>
+    </section>
+
     <label for="roll">Roll no:</label>
   <input type="text" id="roll" name="roll"><br>
  <label for="fname">student name:</label>
   <input type="text" id="fname" name="fname" placeholder="firstname">
   <input type="text" id="lname" name="lname" placeholder="lastname"><br>
-<label for="fname">father's name:</label>
-  <input type="text" id="fname" name="fname"><br>
+<label for="finame">father's name:</label>
+  <input type="text" id="finame" name="finame"><br>
 
   <label for="birthday">Birthday:</label>
   <input type="date" id="birthday" name="birthday"><br>
@@ -200,6 +235,6 @@ Monetization: Free-to-Play (F2P), Premium (Paid), Subscription.<br></address>
   <input type="text" id="City" name="City"><br>
 <label for="Address">Address:</label>
  <textarea name="Address" rows="10" cols="20"></textarea><br>
-
+        </div>
 </body>
 </html>
