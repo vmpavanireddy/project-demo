@@ -153,9 +153,23 @@ Gaming, a character in 2026 video game Genshin Impact<br>
 </dl>
 <br>
 <p id="demo">using JavaScript can change to HTML content.</p>
-<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello player!"'>Me!</button>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello player!"; document.getElementById("demo").style.fontSize = "35px";'>Me!</button>
 <button onclick="alert('I Heard you are a player.Nice to meet you Iam the coach!')" style="background-color: #059862; color: white; padding: 10px 20px; border: none; border-radius: 5px;">SHOULD KNOW</button>
+<p id="yo"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("yo").innerHTML = "My gameplay has changed!";
+}
+document.getElementById("yo").innerHTML = "My gameplay";
+</script>
+<button type="button" onclick="myFunction()">Try it</button>
+
+
+
+
 </section>
+
  <section id="game">
   <p style="font-size:30px">Lets &#71;&#79; &#128151</p> 
 <br>
