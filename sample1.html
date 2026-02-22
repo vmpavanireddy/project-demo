@@ -161,6 +161,7 @@ Gaming, a character in 2026 video game Genshin Impact<br>
 <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
 
 <script>
+  
 function myFunction() {
   document.getElementById("yo").innerHTML = "My gameplay has changed!";
 }
@@ -172,12 +173,20 @@ document.getElementById("this").innerHTML =  x +" "+ fname + " game";
 </script>
 <button type="button" onclick="myFunction()">Try it</button>
 
-
-
-
 </section>
 
  <section id="game">
+  <p id="gamelist"></p>
+<script>
+const top = ["Minecraft", "Roblox", "Fortnite", "League of Legends", "PUBG Mobile/BGMI", "Call of Duty: Mobile"];
+
+let text = "";
+for (let i = 0; i < top.length; i++) {
+  text += top[i] + "<br>";
+}
+
+document.getElementById("gamelist").innerHTML = text;
+</script>
   <p style="font-size:30px">Lets &#71;&#79; &#128151</p> 
 <br>
 <img src="Qp-eRg.gif" alt="Computer man" style="width:480px;height:480px;">
