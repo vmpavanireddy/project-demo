@@ -159,7 +159,32 @@ Gaming, a character in 2026 video game Genshin Impact<br>
 <p id="this"></p>
 
 <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<br>
+<button onclick="getLocation()">location</button>
 
+<p id="loc"></p>
+
+<script>
+const x = document.getElementById("loc");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function success(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function error() {
+  alert("Sorry, no position available.");
+}
+</script>
+<br>
 <script>
   
 function myFunction() {
