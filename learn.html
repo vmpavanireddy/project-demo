@@ -26,6 +26,23 @@
         console.log("Product details:",product);
     delete product.id;
     console.log("Product details:",product);
+
+    const user = {
+        name: "pavani",
+        settings: {
+            theme: "dark",
+            notifications: true,
+            privacy: {
+                profileVisible: true,
+                lastSeen: false,
+            }
+        }
+    };
+    user.settings.privacy.twoFactorAuth = true;
+    user.settings.privacy.profileVisible = false;
+    console.log("User details:", user);
+    console.log("User theme:", user.settings.theme);
+
 </script>
 </body>
 </html>
