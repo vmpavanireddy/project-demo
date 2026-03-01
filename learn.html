@@ -43,6 +43,18 @@
     console.log("User details:", user);
     console.log("User theme:", user.settings.theme);
 
+    const company = {
+        name: "TechSoft",
+        employees: {
+            emp1: { name: "Raj", role: "Developer" },
+            emp2: { name: "Anu", role: "Tester" }
+        }
+    };
+    company.employees.emp3 = { name: "Sita", role: "Manager" };
+    console.log("Employee 1 details:", company.employees.emp1);
+    company.employees.emp2.role = "Senior Developer";
+    console.log("Company details:", company);
+
 </script>
 </body>
 </html>
