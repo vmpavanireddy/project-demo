@@ -12,6 +12,20 @@
     console.log("Student details:",student);
     console.log("details: name",student.name);
     console.log("details:",student["course"]);
+      //Adding / Updating / Deleting Properties
+    //Add stock - Update price - Delete id - Print final object
+    let product={
+        name:"laptop",
+        price:50000,
+        id:"det36l",
+    };
+        console.log("Product details:",product);
+    product["stock"] = "products";
+        console.log("Product details:",product);
+    product["price"] = 509500;
+        console.log("Product details:",product);
+    delete product.id;
+    console.log("Product details:",product);
 </script>
 </body>
 </html>
