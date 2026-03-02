@@ -88,6 +88,16 @@
     };
     console.log("Cart details:", cart);
     console.log("Total price:", cart.calculateTotal());
+
+    const user1 = {
+        name: "pavani",
+        age: 21
+    };  
+    user1.role = "Developer";
+    let user2 = { ...user1, city: "banglore" };
+    console.log("User 1 details:", user1);
+    console.log("User 2 details:", user2);
+
 </script>
 </body>
 </html>
