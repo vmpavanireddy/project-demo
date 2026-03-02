@@ -72,6 +72,22 @@
     console.log("Balance after deposit:", bankAccount.balance);
     bankAccount.withdraw(500);
     console.log("Balance after withdrawal:", bankAccount.balance);
+
+    const cart = {
+        items: [
+            { name: "Laptop", price: 50000 },
+            { name: "Mouse", price: 500 }
+        ],
+        calculateTotal() {
+            let total = 0;
+            for (let item of this.items) {
+                total += item.price;
+            }
+            return total;
+        }
+    };
+    console.log("Cart details:", cart);
+    console.log("Total price:", cart.calculateTotal());
 </script>
 </body>
 </html>
