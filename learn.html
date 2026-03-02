@@ -54,7 +54,24 @@
     console.log("Employee 1 details:", company.employees.emp1);
     company.employees.emp2.role = "Senior Developer";
     console.log("Company details:", company);
-
+    let bankAccount={
+        accountHolder:"pavani",
+        balance:0,
+        deposit(amount){
+            this.balance=this.balance+amount;
+            console.log("Deposit amount:",amount);
+        },
+        withdraw(amount){
+            this.balance=this.balance-amount;
+            console.log("Withdraw amount:",amount);   
+    }
+};
+    console.log("Bank Account Details:", bankAccount);
+    console.log("balence:", bankAccount.balance);
+    bankAccount.deposit(1000);
+    console.log("Balance after deposit:", bankAccount.balance);
+    bankAccount.withdraw(500);
+    console.log("Balance after withdrawal:", bankAccount.balance);
 </script>
 </body>
 </html>
