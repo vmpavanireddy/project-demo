@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+<script>
+    var student=["pavani","divya","deepthi","jyothi","murali"];
+    
+    console.log("Number of students:", student.length);
+    console.log("Student names:", student);
+    console.log("First student:", student[0]);
+    console.log("Last student:", student[student.length - 1]);
+    //adding values in an array
+    //push in first
+    //unshift in last
+    //to add in middle we can use splice
+    student.push("sita");
+    student.unshift("siri");
+    student.splice(2, 0, "vani"); 
+    //in middle we can either add next by next or delete the values on particular index and add new value
+    student.splice(2, 1, "anu"); 
+    //deleting values in an array
+    //pop in first
+    //shift in last
+    //to delete in middle we can use splice
+    student.pop();
+    student.shift();
+    student.splice(2, 1);
+    //sort
+    student.sort();
+    //reverse sort
+    student.sort().reverse();
+    document.writeln(student);
+
+    //loop
+    for(
+        i=0;//initialization
+        i<student.length;//condition/comparision
+        i++)//increment
+        {
+        document.writeln(student[i]+"<br/>");
+    }
+    //in method inside having a function is called as callback function
+    student.forEach(function(name){
+        document.writeln(name+"<br/>");
+    });
+
+    </script>
+</body>
+</html>
