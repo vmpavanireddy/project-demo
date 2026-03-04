@@ -58,6 +58,12 @@
     });
     document.writeln("Total number of students:", students_1.length);
 
+    let products = ["Laptop", "Mouse", "Keyboard"];
+    products.unshift("Monitor");
+    products.push("Printer");
+    products.forEach(function(product){
+        document.writeln(product+"<br/>");
+    });
     </script>
 </body>
 </html>
