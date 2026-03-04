@@ -71,6 +71,11 @@
         document.writeln(name+"<br/>");
     });
 
+    let subjects = ["Math", "Science", "English"];
+    subjects.splice(1, 0, "Computer");
+    subjects.forEach(function(subject){
+        document.writeln(subject+"<br/>");
+    });
     </script>
 </body>
 </html>
