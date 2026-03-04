@@ -95,6 +95,13 @@
             document.writeln(sortedTasks);
         });
 
+        let movies = ["Inception", "Avatar","Titanic"];
+        movies.unshift("Interstellar");
+        movies.push("Joker");
+        movies.splice(2,1);
+        movies.forEach(function(movie){
+            document.writeln(movie);
+        });
     </script>
 </body>
 </html>
