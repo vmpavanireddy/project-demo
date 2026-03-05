@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title> Methods</title>
+</head>
+
+<body>
+    <script>
+        var students = ["pavani", "divya", "deepthi", "jyothi", "murali"];
+        const result = students.find(function (val) {
+            return val === "divya";
+        });
+        console.log(result);
+        const result_1 = students.filter(function (val) {
+            return val === "divya";
+        });
+        console.log(result_2);
+        const result_2 = students.filter(function (val) {
+            return val === "pavani";
+        });
+        console.log(result_1);
+        const result_4 = students.every(function (val) {
+            return val.length == 4;
+        });
+        console.log(result_2);
+        const result_3 = students.some(function (val) {
+            return val.length == 4;
+        });
+        console.log(result_3);
+
+        const newnumbers = [20, 30, 49, 50, 100];
+        const total = newnumbers.reduce(function (a, b) {
+            return a + b;
+        }, 0);
+        console.log(total);
+    </script>
+</body>
+
+</html>
