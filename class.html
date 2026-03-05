@@ -127,6 +127,14 @@
             document.writeln(val+" - Index: "+index+"<br/>");
             document.writeln(arr+"<br/>");
         });
+        //creting a new array by using map method
+        const newStudents = students.map(function(val){
+            return val + "VMR INFOTECH";
+                });
+                //displaying
+                newStudents.forEach(function(student){
+                    document.writeln(student+"<br/>");
+                });
     </script>
 </body>
 </html>
