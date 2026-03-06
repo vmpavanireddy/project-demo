@@ -56,6 +56,22 @@
         })
         console.log(result_2)
 
+        const newnumbers = [{ name: "pavani", marks: 95 },
+        { name: "divya", marks: 98 },
+        { name: "deepthi", marks: 100 },
+        { name: "murali", marks: 99 },
+        { name: "jyothi", marks: 100 },
+        ];
+
+        var total = newnumbers.reduce(function (a, b) {
+            if (a.marks) {
+                return a.marks + b.marks
+            } else {
+                return a + b.marks
+            }
+        })
+        console.log(total)
+
     </script>
 </body>
 
