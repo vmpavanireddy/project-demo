@@ -30,6 +30,14 @@
                 console.log(employee)
 
 
+        var employee_ex = [{ name: "pavani" }, { name: "divya" }, { name: "jyothi" }, { name: "murali" }]
+
+        var result = employee_ex.sort(function (a, b) {
+            return a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+        })
+        console.log(result);
+        console.log(result.reverse())
+
     </script>
 </body>
 
