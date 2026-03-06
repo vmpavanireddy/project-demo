@@ -38,6 +38,15 @@
         console.log(result);
         console.log(result.reverse())
 
+        employee_ex.forEach(function (val) {
+            document.writeln(val.name + "<br/>")
+        })
+
+        var result_1 = employee_ex.map(function (val) {
+            return { ...val, city: "banglore" }
+        })
+        console.log(result_1)
+
     </script>
 </body>
 
