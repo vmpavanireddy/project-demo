@@ -82,6 +82,16 @@
         }
         console.log(result_3)
 
+
+        var result_4 = newnumbers.some(function (sub) {
+            return sub.marks >= 98
+        })
+        if (result_4 == true) {
+            document.writeln("student pass in all sub")
+        } else {
+            document.writeln("students fail in one or more sub")
+        }
+        console.log(result_4)
     </script>
 </body>
 
