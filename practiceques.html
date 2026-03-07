@@ -72,6 +72,16 @@
         })
         console.log(total)
 
+        var result_3 = newnumbers.every(function (sub) {
+            return sub.marks > 98
+        })
+        if (result_3 == false) {
+            document.writeln("student didn't pass in distinction")
+        } else {
+            document.writeln("students passed in distinction")
+        }
+        console.log(result_3)
+
     </script>
 </body>
 
