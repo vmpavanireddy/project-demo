@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         //findIndex willl help u to find the index of the given value
-        var students = ["pavani","divya","deepthi","murali","pavani","jyothi"];
-        var index=students.findIndex(function(val){
+        var students = ["pavani", "divya", "deepthi", "murali", "pavani", "jyothi"];
+        var index = students.findIndex(function (val) {
             return val == "murali"
         })
         console.log(index);
@@ -19,28 +21,35 @@
         console.log(result);
 
         //slice will help u to create a new array from the orginal array
-        var result_1 = students.slice(3,6)
+        var result_1 = students.slice(3, 6)
         console.log(result_1)
-        
+
         //concat will add two arrays and create a new array
-        var secondarr =["vaishu","karthika","akshaya"]
+        var secondarr = ["vaishu", "karthika", "akshaya"]
         var thirdarrr = students.concat(secondarr)
         console.log(thirdarrr)
 
         //flat-to make nested array as single array but only does for 1 level
-        var myarrofno = [10,20,40,[36,7,[8],9,],94,56]
+        var myarrofno = [10, 20, 40, [36, 7, [8], 9,], 94, 56]
         console.log(myarrofno.flat())
 
         var result = thirdarrr.includes("karthika");
         console.log(result);
 
-        var foutharr =["santhosh","ume","thansika"]
-        var fitharr=thirdarrr.concat(foutharr)
+        var foutharr = ["santhosh", "ume", "thansika"]
+        var fitharr = thirdarrr.concat(foutharr)
         console.log(fitharr)
 
-        fitharr.forEach(function(student){
-                    document.writeln(student+"<br/>");
-                });
-    </script>
+        fitharr.forEach(function (student) {
+            document.writeln(student + "<br/>");
+        });
+
+        var sixth = fitharr.concat(myarrofno)
+        console.log(sixth)   
+        sixth.forEach(function (student) {
+            document.writeln(student + "<br/>");
+        });
+        </script>
 </body>
+
 </html>
