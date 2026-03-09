@@ -12,6 +12,14 @@
     <h2>yo</h2>
     <h3 id="demo">congratulations u leveled up</h3>
     <para>introfuce your intere and hobbies</para>
+    <ul>
+        <li class="mylist">First-Person Shooter</li>
+        <li class="mylist">Action-Adventure </li>
+        <li class="mylist">Role-Playing Games </li>
+        <li class="mylist">Battle Royale Games </li>
+        <li class="mylist">Racing Games </li>
+        <li class="mylist">Open-World Games</li>
+    </ul>
     <button onclick="handlehtmlecontent()">next step</button>
     <script>
         function handlehtmlecontent() {
@@ -26,6 +34,13 @@
         document.getElementById("demo").style.background = "red"
         document.getElementById("demo").style.color = "white"
 
+        const allclassitems = document.getElementsByClassName("mylist");
+        console.log(allclassitems);
+        for (i = 0; i < allclassitems.length; i++) {
+            allclassitems[i].style.background = "green"
+            allclassitems[i].style.margin = "10"
+
+        }
     </script>
 </body>
 
