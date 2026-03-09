@@ -7,11 +7,14 @@
 </head>
 <body>
     <h1>hello</h1>
+    <h2>yo</h2>
     <button onclick="handlehtmlecontent()">next step</button>
     <script>
         function handlehtmlecontent(){
             document.querySelector("h1").innerHTML="rules to follw";
             document.querySelector("h1").style.background="yellow";
+            var selectedelement = document.querySelector("h2")
+            document.body.removeChild(selectedelement);
         }
     </script>
 </body>
