@@ -31,7 +31,7 @@
             document.querySelector("para").style.background = "red";
             document.querySelector("para").innerHTML = "play,draw,enjoy";
 
-        }
+        
         document.getElementById("demo").style.background = "red"
         document.getElementById("demo").style.color = "white"
 
@@ -48,6 +48,13 @@
             allements[i].style.margin = "16px"
         }
         document.querySelector("a").style.color="purple"
+         var alllistitems = document.querySelectorAll(".mylist")
+         console.log(alllistitems)
+         for (i = 0; i < alllistitems.length; i++) {
+            alllistitems[i].style.background = "green"
+            alllistitems[i].style.margin = "16px"
+        }
+    }
     </script>
 </body>
 
