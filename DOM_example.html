@@ -12,6 +12,7 @@
     <h2>yo</h2>
     <h3 id="demo">congratulations u leveled up</h3>
     <para>introfuce your intere and hobbies</para>
+    <a>rewards</a>
     <ul>
         <li class="mylist">First-Person Shooter</li>
         <li class="mylist">Action-Adventure </li>
@@ -38,8 +39,13 @@
         console.log(allclassitems);
         for (i = 0; i < allclassitems.length; i++) {
             allclassitems[i].style.background = "green"
-            allclassitems[i].style.margin = "10"
-
+            allclassitems[i].style.margin = "10px"
+        }
+        const allements=document.getElementsByTagName("li")
+        console.log(allements);
+        for (i = 0; i < allements.length; i++) {
+            allements[i].style.background = "blue"
+            allements[i].style.margin = "16px"
         }
     </script>
 </body>
