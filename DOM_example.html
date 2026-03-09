@@ -10,6 +10,7 @@
 <body>
     <h1>hello</h1>
     <h2>yo</h2>
+    <h3 id="demo">congratulations u leveled up</h3>
     <para>introfuce your intere and hobbies</para>
     <button onclick="handlehtmlecontent()">next step</button>
     <script>
@@ -22,6 +23,9 @@
             document.querySelector("para").innerHTML = "play,draw,enjoy";
 
         }
+        document.getElementById("demo").style.background = "red"
+        document.getElementById("demo").style.color = "white"
+
     </script>
 </body>
 
