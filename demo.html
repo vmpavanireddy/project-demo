@@ -114,7 +114,25 @@ function calculateEMI() {
     let rate = parseFloat(document.getElementById("rate").value);
     let type = document.getElementById("paymentType").value;
     let typeTenure = document.getElementById("tenureType").value;
+
+    if (typeTenure === "years") {
+        n = n * 12; // convert to months
+    }
+
+    let r = rate / 12 / 100;
+
+    // EMI Formula
+    let emi = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+
+    // In Advance EMI
+    if (type === "in Advance") {
+        emi = emi / (1 + r);
+    }
+
+    document.getElementById("result").innerHTML =
+        "Monthly Payment: $" + emi.toFixed(2);
 }
+
 
 </script>
 
