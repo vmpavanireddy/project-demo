@@ -133,6 +133,12 @@ function calculateEMI() {
         "Monthly Payment: $" + emi.toFixed(2);
 }
 
+function clearForm() {
+    document.getElementById("amount").value = "";
+    document.getElementById("tenure").value = "";
+    document.getElementById("rate").value = "";
+    document.getElementById("result").innerHTML = "";
+}
 
 </script>
 
