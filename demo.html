@@ -90,6 +90,21 @@
         <option value="years">years</option>
     </select>
 
+    <label>Interest Rate (%):</label>
+    <input type="number" id="rate" step="0.001" placeholder="5.125">
+
+    <label>Type:</label>
+    <select id="paymentType">
+        <option>in Arrears</option>
+        <option>in Advance</option>
+    </select>
+
+    <div class="btn-row">
+        <button onclick="clearForm()">Clear</button>
+        <button onclick="calculateEMI()">Calculate</button>
+    </div>
+
+    <div id="result"></div>
 
 </div>
 
