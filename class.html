@@ -88,6 +88,10 @@
         marks.forEach(function(mark){
             document.writeln(mark);
         });
+        marks.sort().reverse();
+        marks.forEach(function(mark){
+            document.writeln(mark);
+        });
 
         let tasks = ["Wake up", "Brush", "Exercise", "Breakfast"];
         let sortedTasks = tasks.reverse()
