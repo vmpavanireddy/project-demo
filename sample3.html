@@ -17,7 +17,10 @@
         <input type="text" name="" id="email" /><br />
         <button type="button" onclick="adduser()">add user</button>
     </form>
-
+<hr>
+<table border="1">
+    
+</table>
     <script>
         let allusers=[];
 
@@ -29,9 +32,17 @@
             }
             allusers.push(user)
             console.log("add user called",allusers);
-
+            clearform();
         }
+        function clearform(){
+            document.getElementById("fname").value="";
+            document.getElementById("lname").value="";
+            document.getElementById("email").value="";
         
+        }
+        function displayuser(){
+            
+        }
     </script>
 </body>
 
