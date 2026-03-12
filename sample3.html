@@ -19,14 +19,19 @@
     </form>
 
     <script>
+        let allusers=[];
+
         function adduser() {
             let user={
                 fname:document.getElementById("fname").value,
                 lname:document.getElementById("lname").value,
                 email:document.getElementById("email").value,
             }
-            console.log("add user called");
+            allusers.push(user)
+            console.log("add user called",allusers);
+
         }
+        
     </script>
 </body>
 
