@@ -10,17 +10,24 @@
 <body>
     <form action="">
         <label for="">firstname</label>
-        <input type="text" name="" id="fname" /><br/>
+        <input type="text" name="" id="fname" /><br />
         <label for="">last name</label>
-        <input type="text" name="" id="lname" /><br/>
+        <input type="text" name="" id="lname" /><br />
         <label for="">email</label>
-        <input type="text" name="" id="email" /><br/>
+        <input type="text" name="" id="email" /><br />
         <button type="button" onclick="adduser()">add user</button>
     </form>
 
-        <script>
+    <script>
+        function adduser() {
+            let user={
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                email:document.getElementById("email").value,
+            }
             console.log("add user called");
-        </script>
+        }
+    </script>
 </body>
 
 </html>
