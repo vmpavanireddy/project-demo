@@ -17,31 +17,48 @@
         <input type="text" name="" id="email" /><br />
         <button type="button" onclick="adduser()">add user</button>
     </form>
-<hr>
-<table border="1">
-    
-</table>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+            </tr>
+        <tbody></tbody>
+        </thead>
+    </table>
     <script>
-        let allusers=[];
+        let allusers = [];
 
         function adduser() {
-            let user={
-                fname:document.getElementById("fname").value,
-                lname:document.getElementById("lname").value,
-                email:document.getElementById("email").value,
+            let user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
             }
             allusers.push(user)
-            console.log("add user called",allusers);
+            console.log("add user called", allusers);
+            localStorage.setitem("allusers", JSON.stringify(allusers))
+            displayuser();
             clearform();
         }
-        function clearform(){
-            document.getElementById("fname").value="";
-            document.getElementById("lname").value="";
-            document.getElementById("email").value="";
-        
+        function clearform() {
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("email").value = "";
+
         }
-        function displayuser(){
-            
+        function displayuser() {
+
+            allusers.forEach(function (user) {
+                document.querySelector.innerHTML("tbody") = "";
+                let mytr = document.createElement("tr");
+                mytr.innerHTML = `<td>${user.fname}</td>
+                                <td>${user.lname}</td>
+                                <td>${user.email}</td>`
+                document.querySelector("body").append(mytr);
+            })
         }
     </script>
 </body>
