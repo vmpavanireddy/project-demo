@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Green Star Hotel Bill</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .no-border {
+            border: none;
+        }
+
+        .input-row {
+            margin-top: 20px;
+        }
+
+        select, input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .bill-summary td {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>GREEN STAR HOTEL</h1>
+    <h2>Customer Bill</h2>
+    <hr style="width:70%">
+
+    <h3>Date: <span id="date"></span></h3>
+
+    <!-- Input Section -->
+    <div class="input-row">
+        <label>Items:</label>
+        <select id="itemSelect">
+            <option value="Biryani">Biryani - 140</option>
+            <option value="Fried Rice">Fried Rice - 110</option>
+            <option value="Chicken Curry">Chicken Curry - 230</option>
+        </select>
+
+        &nbsp;&nbsp;
+
+        <label>No of Items:</label>
+        <input type="number" id="qty" min="1">
+        &nbsp;
+
+        <button onclick="addItem()">Add</button>
+    </div>
+
+    <!-- Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Sl No.</th>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price Each</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody id="billTable"></tbody>
+    </table>
+
+    <!-- Summary -->
+    <table class="bill-summary">
+        <tr>
+            <td class="no-border">Total</td>
+            <td class="no-border">Rs. <span id="total">0</span></td>
+        </tr>
+        <tr>
+            <td class="no-border">GST @5%</td>
+            <td class="no-border">Rs. <span id="gst">0</span></td>
+        </tr>
+        <tr>
+            <td class="no-border">Bill to be Paid</td>
+            <td class="no-border">Rs. <span id="finalBill">0</span></td>
+        </tr>
+    </table>
+
+    <script>
+        document.getElementById("date").innerHTML = new Date().toLocaleDateString();
+
+        let prices = {
+            "Biryani": 140,
+            "Fried Rice": 110,
+            "Chicken Curry": 230
+        };
+
+        let count = 0;
+        let total = 0;
+
+        function addItem() {
+            let item = document.getElementById("itemSelect").value;
+            let qty = parseInt(document.getElementById("qty").value);
+
+            if (!qty || qty <= 0) {
+                alert("Enter valid quantity");
+                return;
+            }
+
+            count++;
+            let priceEach = prices[item];
+            let amount = priceEach * qty;
+            total += amount;
+
+            let table = document.getElementById("billTable");
+
+            let row = `<tr>
+                <td>${count}</td>
+                <td>${item}</td>
+                <td>${qty}</td>
+                <td>Rs. ${priceEach} Each</td>
+                <td>Rs. ${amount}</td>
+            </tr>`;
+
+            table.innerHTML += row;
+
+            updateSummary();
+        }
+
+        function updateSummary() {
+            let gst = total * 0.05;
+            let final = total + gst;
+
+            document.getElementById("total").innerText = total.toFixed(2);
+            document.getElementById("gst").innerText = gst.toFixed(2);
+            document.getElementById("finalBill").innerText = final.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

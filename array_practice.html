@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const students = ["pavani", "divya", "deepthi", "murali", "jyothi"];
+        // document.writeln(students);
+        students.forEach(function (val) {
+            document.writeln(val+"<br/>");
+        })
+//map statement help to create new array
+        const newStudents = students.map(function(value){
+            return value + " .v"
+        })
+        console.log(newStudents)
+        
+        
+    </script>
+</body>
+
+</html>

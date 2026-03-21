@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EMI Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f9f9f9;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 380px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        .title {
+            background: #b3362d;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-row {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            width: 45%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background: #b3362d;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">EMI Loan Calculator</div>
+
+    <label>Loan Amount: $</label>
+    <input type="number" id="amount" placeholder="16500">
+
+    <label>Loan Tenure:</label>
+    <input type="number" id="tenure" placeholder="36">
+
+    <select id="tenureType">
+        <option value="months">months</option>
+        <option value="years">years</option>
+    </select>
+
+    <label>Interest Rate (%):</label>
+    <input type="number" id="rate" step="0.001" placeholder="5.125">
+
+    <label>Type:</label>
+    <select id="paymentType">
+        <option>in Arrears</option>
+        <option>in Advance</option>
+    </select>
+
+    <div class="btn-row">
+        <button onclick="clearForm()">Clear</button>
+        <button onclick="calculateEMI()">Calculate</button>
+    </div>
+
+    <div id="result"></div>
+
+<script>
+
+function calculateEMI() {
+    let P = parseFloat(document.getElementById("amount").value);
+    let n = parseInt(document.getElementById("tenure").value);
+    let rate = parseFloat(document.getElementById("rate").value);
+    let type = document.getElementById("paymentType").value;
+    let typeTenure = document.getElementById("tenureType").value;
+
+    if (typeTenure === "years") {
+        n = n * 12; // convert to months
+    }
+
+    let r = rate / 12 / 100;
+
+    // EMI Formula
+    let emi = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+
+    // In Advance EMI
+    if (type === "in Advance") {
+        emi = emi / (1 + r);
+    }
+
+    document.getElementById("result").innerHTML =
+        "Monthly Payment: $" + emi.toFixed(2);
+}
+
+function clearForm() {
+    document.getElementById("amount").value = "";
+    document.getElementById("tenure").value = "";
+    document.getElementById("rate").value = "";
+    document.getElementById("result").innerHTML = "";
+}
+
+</script>
+
+</div>
+
+</body>
+</html>

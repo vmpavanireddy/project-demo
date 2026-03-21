@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var students = ["pavani","divya","deepthi","murali","pavani","jyothi"];
+        //find -only one first value matching condition
+        var result = students.find(function(val){
+            return val == "pavani"
+        })
+        console.log(result);
+        //filter-find all value repeted
+        var result_1 = students.filter(function(valu){
+               return valu == "pavani"
+        })
+        console.log(result_1)
+
+    </script>
+</body>
+</html>

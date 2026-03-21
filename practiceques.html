@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var employee = [{ name: "pavani" }, { name: "divya" }, { name: "jyothi" }, { name: "murali" }]
+        var newemp = { name: "deepthi" }
+        employee.push(newemp)
+        console.log(employee)
+
+        var students = ["pavani", "divya", "deepthi", "murali", "pavani", "jyothi"];
+        console.log(students.sort())
+
+        employee.pop();
+        console.log(employee)
+
+        employee.shift();
+                console.log(employee)
+
+        employee.unshift(newemp);
+                console.log(employee)
+
+        employee.splice(1, 1);
+                console.log(employee)
+
+
+        var employee_ex = [{ name: "pavani" }, { name: "divya" }, { name: "jyothi" }, { name: "murali" }]
+
+        var result = employee_ex.sort(function (a, b) {
+            return a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+        })
+        console.log(result);
+        console.log(result.reverse())
+
+        employee_ex.forEach(function (val) {
+            document.writeln(val.name + "<br/>")
+        })
+
+        var result_1 = employee_ex.map(function (val) {
+            return { ...val, city: "banglore" }
+        })
+        console.log(result_1)
+
+        var details = [{ name: "pavani", city: "banglore" },
+        { name: "divya", city: "paris" },
+        { name: "jyothi", city: "banglore" },
+        { name: "murali", city: "hyderbad" }]
+        var result_2 = details.find(function (val) {
+            return val.city === "banglore"
+        })
+        console.log(result_2)
+
+        const newnumbers = [{ name: "pavani", marks: 95 },
+        { name: "divya", marks: 98 },
+        { name: "deepthi", marks: 100 },
+        { name: "murali", marks: 99 },
+        { name: "jyothi", marks: 100 },
+        ];
+
+        var total = newnumbers.reduce(function (a, b) {
+            if (a.marks) {
+                return a.marks + b.marks
+            } else {
+                return a + b.marks
+            }
+        })
+        console.log(total)
+
+        var result_3 = newnumbers.every(function (sub) {
+            return sub.marks > 98
+        })
+        if (result_3 == false) {
+            document.writeln("student didn't pass in distinction")
+        } else {
+            document.writeln("students passed in distinction")
+        }
+        console.log(result_3)
+
+
+        var result_4 = newnumbers.some(function (sub) {
+            return sub.marks >= 98
+        })
+        if (result_4 == true) {
+            document.writeln("student pass in all sub")
+        } else {
+            document.writeln("students fail in one or more sub")
+        }
+        console.log(result_4)
+
+        var result_4 = newnumbers.some(function (sub) {
+            return sub.name.length >= 5
+        })
+        console.log(result_4)
+
+    </script>
+</body>
+
+</html>
