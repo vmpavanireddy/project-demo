@@ -106,16 +106,6 @@
         <input type="checkbox" id="terms" name="terms" required>
         <label for="terms">I agree to the Terms and Conditions</label><br><br>
 
-        <label for="language">Preferred Language:</label>
-        <select id="language" name="language">
-            <option value="en">English</option>
-            <option value="es">Spanish</option>
-            <option value="fr">French</option>
-        </select><br><br>
-
-        <label for="emergency">Emergency Contact:</label>
-        <input type="text" id="emergency" name="emergency"><br><br>
-
         <!-- Submit button -->
 
         <input type="submit" value="Register">
@@ -139,18 +129,44 @@
 <parameter name="filePath">/Users/vmpavanireddy/Documents/project-demo/registration.html<!-- Commit 1 -->
 <!-- Commit 2 -->
 <!-- Commit 3 -->
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        <label for="profile_pic">Profile Picture URL:</label>
-        <input type="url" id="profile_pic" name="profile_pic"><br><br>
-        <label for="bio">Bio:</label>
-        <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br><br>
+        <label for="password">Password:</label>
+        <!-- Password input -->
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="age">Age:</label>
+        <!-- Age input -->
+        <input type="number" id="age" name="age" min="1"><br><br>
+        <label for="gender">Gender:</label>
+        <!-- Gender input -->
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option va            <option va            <option va            <option va            <option va            <optionge            <option va            <optio'E            <option va     ne            <option va            <option va            <option va  el  id            <option va            <option va            <opl &            <option va            <option va            <option va            <option va            <option va            <optionge            <option va            <optio'E            <option vs=            <option va            <option va            <optiol &            <option va            <option va            <option va            <option va            <option va            <optionge            <option va            <d=            <option va            <option va            < && git commit -m "Add city field"
 
-        <label for="hobbies">Hobbies:</label>
-        <textarea id="hobbies" name="hobbies" rows="3" cols="50"></textarea><br><br>
+cat >> registration.html <<'EOF'
+        <label for="state">State:</label>
+        <!-- State input -->
+        <input type="text" id="state" name="state"><br><br>
+        <label for="zip">Zip Code:</label>
+        <!-- Zip code input -->
+        <input type="text" id="zip" name="zip"><br><br>
+        <label for="country">Country:</label>
+        <!-- Country input -->
+        <input type="text" id="country" name="country"><br><br>
+        <label for="linkedin">LinkedIn:</label>
+        <!-- LinkedIn input -->
+        <input type="url" id="linkedin" name="linkedin"><br><br>
+        <label for="portfolio">Portfolio:</label>
+        <!-- Portfolio input -->
+        <input type="url" id="portfolio" name="portfolio"><br><br>
+        <label for="twitter">Twitter:</label>
+        <!-- Twitter handle input -->
+        <input type="text" id="twitter" name="twitter"><br><br>
+        <label for="github">GitHub:</label>
+        <!-- GitHub profile input -->
+        <input type="url" id="github" name="github"><br><br>
 
-        <label for="fav_color">Favorite Color:</label>
-        <input type="color" id="fav_color" name="fav_color"><br><br>
-
-        <input type="checkbox" id="newsletter" name="newsletter">
-        <label for="newsletter">Subscribe to Newsletter</label><br><br>
+        <label for="stack">Stack Overflow:</label>
+        <!-- Stack Overflow profile input -->
+        <input type="url" id="stack" name="stack"><br><br>
+        <label for="website">Personal Website:</label>
+        <!-- Personal website input -->
+        <input type="url" id="website" name="website"><br><br>
