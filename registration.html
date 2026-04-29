@@ -16,25 +16,56 @@
     <h1>Registration Form</h1>
     <form action="#" method="post">
         <label for="fullname">Full Name:</label>
-        <input type="text" id="fullname" name="fullname" required><br>
+        <input type="text" id="fullname" name="fullname" required>
+
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
+        <input type="email" id="email" name="email" required>
+
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
+        <input type="password" id="password" name="password" required>
+
         <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone"><br>
+        <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+
         <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob"><br>
+        <input type="date" id="dob" name="dob">
+
         <label for="age">Age:</label>
-        <input type="number" id="age" name="age" min="1" max="120"><br>
+        <input type="number" id="age" name="age" min="1" max="120">
+
         <label for="website">Website:</label>
-        <input type="url" id="website" name="website"><br>
-        <label><input type="checkbox" id="terms" name="terms"> I agree to the Terms and Conditions</label><br>
-        <label>Gender:</label>
-        <label><input type="radio" id="gender_male" name="gender" value="male"> Male</label>
-        <label><input type="radio" id="gender_female" name="gender" value="female"> Female</label><br>
+        <input type="url" id="website" name="website" placeholder="https://example.com">
+
+        <label for="favorite_color">Favorite Color:</label>
+        <input type="color" id="favorite_color" name="favorite_color" value="#0099ff">
+
+        <label for="experience">Experience Level:</label>
+        <input type="range" id="experience" name="experience" min="0" max="10" step="1">
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="">Select one</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="bio">Short Bio:</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+
+        <fieldset>
+            <legend>Gender</legend>
+            <label><input type="radio" id="gender_male" name="gender" value="male"> Male</label>
+            <label><input type="radio" id="gender_female" name="gender" value="female"> Female</label>
+            <label><input type="radio" id="gender_other" name="gender" value="other"> Other</label>
+        </fieldset>
+
+        <label><input type="checkbox" id="terms" name="terms"> I agree to the Terms and Conditions</label>
+
         <label for="resume">Resume Upload:</label>
-        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"><br>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+
         <input type="submit" value="Submit">
         <input type="reset" value="Reset">
     </form>
