@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Updated on May 1st, 2026 -->
+    <!-- May 3rd commit 1 -->
 </head>
 <body>
     <h1>Gaming Zone</h1>
@@ -79,25 +80,80 @@
 
 <textarea rows="5" cols="30">
 Write your review...
-</textarea>
+</textarea
 <form>
-    <h2>Gamer Registration</h2>
-
+    <h2>Gaming Profile</h2>
+    
     <label for="fullname">Full Name:</label>
+    <!-- Full name input -->
     <input type="text" id="fullname" name="fullname" required><br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-    <label for="phone">Phone Number:</label>
-    <input type="tel" id="phone" name="phone"><br><br>
+    
+        <label for="gamer_email">Email:</label>
+    <input type="email" id="gamer_email" name="gamer_email"><br><br>
+
+    <label for="level">Gaming Level:</label>
+    <input type="number" id="level" name="level" min="1" max="200"><br><br>
+
     <label for="join_date">Join Date:</label>
     <input type="date" id="join_date" name="join_date"><br><br>
+
+    <label for="twitch_url">Twitch Channel:</label>
+    <input type="url" id="twitch_url" name="twitch_url"><br><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone"><br><br>
+
+    <label for="favorite_color">Favorite Color:</label>
+    <input type="color" id="favorite_color" name="favorite_color"><br><br>
+
+    <label for="skill_level">Skill Level:</label>
+    <input type="range" id="skill_level" name="skill_level" min="1" max="10"><br><br>
+
     <label for="platform">Preferred Platform:</label>
     <select id="platform" name="platform">
         <option value="pc">PC</option>
         <option value="console">Console</option>
         <option value="mobile">Mobile</option>
     </select><br><br>
-    <input type="submit" value="Submit">
+
+    <label for="bio">Bio:</label>
+    <textarea id="bio" name="bio" rows="4" cols="30"></textarea><br><br>
+
+    <label>Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male"> Male<br>
+    <input type="radio" id="female" name="gender" value="female"> Female<br>
+    <input type="radio" id="other" name="gender" value="other"> Other<br><br>
+
+    <label><input type="checkbox" id="newsletter" name="newsletter"> Subscribe to newsletter</label><br><br>
+
+    <label for="avatar">Upload Avatar:</label>
+    <input type="file" id="avatar" name="avatar" accept="image/*"><br><br>
+
+    <label for="play_time">Preferred Play Time:</label>
+    <input type="time" id="play_time" name="play_time"><br><br>
+
+    <label for="search_game">Search Favorite Game:</label>
+    <input type="search" id="search_game" name="search_game"><br><br>
+
+    <label for="game_search">Search Game:</label>
+    <input type="search" id="game_search" name="game_search" placeholder="Search your game"><br><br>
+
+    <label for="player_color">Player Color:</label>
+    <input type="color" id="player_color" name="player_color"><br><br>
+
+    <label for="skill_rating">Skill Rating:</label>
+    <input type="range" id="skill_rating" name="skill_rating" min="1" max="100"><br><br>
+
+    <label for="gaming_hours">Gaming Hours:</label>
+    <input type="time" id="gaming_hours" name="gaming_hours"><br><br>
+
+    <label for="last_login">Last Login:</label>
+    <input type="datetime-local" id="last_login" name="last_login"><br><br>
+
+    <label for="screenshot">Profile Screenshot:</label>
+    <input type="file" id="screenshot" name="screenshot"><br><br>
+
+<input type="submit" value="Submit">
 </form>
 </body>
 </html>
