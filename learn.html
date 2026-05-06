@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>Learn</title>
+</head>
+<body>
+<script>
+    let student={
+        name:"pavani",
+         age:20,
+         course:"CSE",
+    };
+    console.log("Student details:",student);
+    console.log("details: name",student.name);
+    console.log("details:",student["course"]);
+      //Adding / Updating / Deleting Properties
+    //Add stock - Update price - Delete id - Print final object
+    let product={
+        name:"laptop",
+        price:50000,
+        id:"det36l",
+    };
+        console.log("Product details:",product);
+    product["stock"] = "products";
+        console.log("Product details:",product);
+    product["price"] = 509500;
+        console.log("Product details:",product);
+    delete product.id;
+    console.log("Product details:",product);
+
+    const user = {
+        name: "pavani",
+        settings: {
+            theme: "dark",
+            notifications: true,
+            privacy: {
+                profileVisible: true,
+                lastSeen: false,
+            }
+        }
+    };
+    user.settings.privacy.twoFactorAuth = true;
+    user.settings.privacy.profileVisible = false;
+    console.log("User details:", user);
+    console.log("User theme:", user.settings.theme);
+
+    const company = {
+        name: "TechSoft",
+        employees: {
+            emp1: { name: "Raj", role: "Developer" },
+            emp2: { name: "Anu", role: "Tester" }
+        }
+    };
+    company.employees.emp3 = { name: "Sita", role: "Manager" };
+    console.log("Employee 1 details:", company.employees.emp1);
+    company.employees.emp2.role = "Senior Developer";
+    console.log("Company details:", company);
+    let bankAccount={
+        accountHolder:"pavani",
+        balance:0,
+        deposit(amount){
+            this.balance=this.balance+amount;
+            console.log("Deposit amount:",amount);
+        },
+        withdraw(amount){
+            this.balance=this.balance-amount;
+            console.log("Withdraw amount:",amount);   
+    }
+};
+    console.log("Bank Account Details:", bankAccount);
+    console.log("balence:", bankAccount.balance);
+    bankAccount.deposit(1000);
+    console.log("Balance after deposit:", bankAccount.balance);
+    bankAccount.withdraw(500);
+    console.log("Balance after withdrawal:", bankAccount.balance);
+
+    const cart = {
+        items: [
+            { name: "Laptop", price: 50000 },
+            { name: "Mouse", price: 500 }
+        ],
+        calculateTotal() {
+            let total = 0;
+            for (let item of this.items) {
+                total += item.price;
+            }
+            return total;
+        }
+    };
+    console.log("Cart details:", cart);
+    console.log("Total price:", cart.calculateTotal());
+
+    const user1 = {
+        name: "pavani",
+        age: 21
+    };  
+    user1.role = "Developer";
+    let user2 = { ...user1, city: "banglore" };
+    console.log("User 1 details:", user1);
+    console.log("User 2 details:", user2);
+
+    const employee_1 = {
+        id: 106,
+        name: "pavani",
+        department_2: "IT",
+        salary: 150000
+    };
+    let { name, department_2, salary,location_1 ='banglore' } = employee_1;
+    console.log("Employee Name:", name);
+    console.log("Employee Department:", department_2);
+    console.log("Employee Salary:", salary);
+    console.log("Employee Location:", location_1);
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var students =["pavani","vani","divya","deepthi","murali","jyothi"]
+        //every -to check given condition is true or false
+        var result=students.every(function(val){
+            return val.length >= 4;
+        })
+        console.log(result)
+
+        //some- even if one value true evrything is true
+        var result_1=students.some(function(val){
+            return val.length == 5;
+        })
+        console.log(result_1)
+
+        var marks = [10,20,40,3,94,56]
+        var total=marks.reduce(function(val1,val2){
+            return val1+val2;
+        })
+        console.log(total);
+        //reduce--will calculate total numbers
+    </script>
+</body>
+</html>

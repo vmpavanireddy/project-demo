@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Income Tax and Wages Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #e6e6e6;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 800px;
+            padding: 20px;
+            background: #c1e0e0;
+            border-radius: 10px;
+            border: 3px solid #2b6f70;
+        }
+
+        h2 {
+            text-align: center;
+            background: #2b6f70;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 6px;
+        }
+
+        input {
+            width: 95%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #666;
+        }
+
+        .btn-row {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 7px;
+            border: none;
+            background: #2b6f70;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .output {
+            background: #fff;
+            border: 1px solid #555;
+            padding: 7px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Income Tax and Wages Calculator</h2>
+
+    <table>
+        <tr>
+            <td>Reference No</td>
+            <td><input id="ref"></td>
+            <td>Tax Period</td>
+            <td><input id="period" type="number"></td>
+        </tr>
+
+        <tr>
+            <td>Employer Name</td>
+            <td><input id="employer"></td>
+            <td>Tax Code</td>
+            <td><input id="taxcode"></td>
+        </tr>
+
+        <tr>
+            <td>Employee Name</td>
+            <td><input id="employee"></td>
+            <td>NI Code</td>
+            <td><input id="nicode"></td>
+        </tr>
+
+        <tr>
+            <td>Job Title</td>
+            <td><input id="job"></td>
+            <td>NI Number</td>
+            <td><input id="ninumber"></td>
+        </tr>
+
+        <tr>
+            <td>Payment</td>
+            <td><input id="payment" type="number"></td>
+            <td>Date</td>
+            <td><input id="date" type="date"></td>
+        </tr>
+
+        <tr>
+            <td>Untaxed Income</td>
+            <td><input id="untaxed" type="number"></td>
+            <td>Gross Pay</td>
+            <td><input id="gross" class="output" readonly></td>
+        </tr>
+
+        <tr>
+            <td>Taxable Wages</td>
+            <td><input id="taxable" class="output" readonly></td>
+            <td>Deduction</td>
+            <td><input id="deduction" class="output" readonly></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Net Pay</td>
+            <td><input id="netpay" class="output" readonly></td>
+        </tr>
+    </table>
+
+    <div class="btn-row">
+        <button onclick="calculate()">Calculate</button>
+        <button onclick="resetAll()">Reset</button>
+        <button onclick="systemExit()">System Exit</button>
+    </div>
+</div>
+
+<script>
+function calculate() {
+    let payment = parseFloat(document.getElementById("payment").value);
+    let untaxed = parseFloat(document.getElementById("untaxed").value);
+
+    // Validation
+    if (isNaN(payment) || isNaN(untaxed) || payment < 0 || untaxed < 0) {
+        alert("Enter valid numeric values for Payment and Untaxed Income!");
+        return;
+    }
+
+    // Calculate Gross Pay
+    let grossPay = payment + untaxed;
+
+    // Deduction = (Payment + Untaxed Income) × 0.2
+    let deduction = grossPay * 0.2;
+
+    // Net Pay = Gross Pay − Deduction
+    let netPay = grossPay - deduction;
+
+    // Display Results
+    document.getElementById("gross").value = "£" + grossPay.toFixed(2);
+    document.getElementById("taxable").value = "£" + grossPay.toFixed(2);
+    document.getElementById("deduction").value = "£" + deduction.toFixed(2);
+    document.getElementById("netpay").value = "£" + netPay.toFixed(2);
+}
+
+function resetAll() {
+    if (confirm("Are you sure you want to reset all fields?")) {
+        document.querySelectorAll("input").forEach(input => {
+            if (!input.classList.contains("output")) {
+                input.value = "";
+            }
+        });
+
+        document.getElementById("gross").value = "";
+        document.getElementById("taxable").value = "";
+        document.getElementById("deduction").value = "";
+        document.getElementById("netpay").value = "";
+    }
+}
+
+function systemExit() {
+    if (confirm("Are you sure you want to exit the system?")) {
+        window.close();
+    }
+}
+</script>
+
+</body>
+</html>

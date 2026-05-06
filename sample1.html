@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gamer</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <style>
+      body {
+  background-image: url('back.img');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+table, th, td {
+  border:2px solid black;
+    border-collapse: collapse;
+  border-spacing: 5px;
+
+}
+
+th, td {
+  background-color: #cef6f6;
+    text-align: left;
+      padding: 6px;
+
+}
+p.solid {border-style: solid;}
+p.dashed {border-style: dashed;
+  border-width: 2px;
+  border-color: rgb(80, 104, 80);
+  border-right-style: solid;
+  border-radius: 12px;
+  padding: 21px;
+}
+
+#para1 {
+  font-style: oblique;
+
+  text-align: center;
+  color: rgb(131, 83, 83);
+}
+p {
+    text-shadow: 2px 2px 5px red;
+  text-align: center;
+  color: rgb(71, 0, 0);
+}
+      h1{
+          font-size: 25px;
+
+        color: rgb(34, 23, 23);
+  background-image: url('paper.png');
+  background-repeat: repeat-x;
+  text-decoration-line: underline;
+    text-transform: uppercase;
+  text-shadow: 1px 2px red;;
+  font-style: italic;
+
+      }
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+width: 130px;
+  height: 100%; 
+  background-color: #035b84;
+   position: fixed;
+   overflow: auto;
+}
+
+.navbar li a {
+  display: block;
+  color: rgb(11, 34, 85);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.navbar a:hover {
+  background-color: #c17f7f;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 20px;
+  width: 60%;
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button {
+  padding: 8px 15px;
+}
+    </style>
+</head>
+
+<body style="background-color:powderblue;"  >
+  <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#genre">genre</a></li>
+                <li><a href="#game">game</a></li>
+            </ul>
+        </nav>
+        <div style="margin-left:130px;padding:1px 16px;height:1000px;">
+
+        <section id="home">
+    <h1 style="text-align:center;">Welcome</h1>
+    <h2 style="font-family:courier;">About Gaming</h2>
+      <p style="font-size:160%;" ></p>
+        <p id="para1" class="solid">Lets goo ✔️</p>
+        <b>The act of playing games</b>,as in:<br>
+Legalized gambling, playing games of chance for money, often referred to in law as <strong>"gaming"</strong><br>
+<i>Playing a role-playing game, in which <mark>players</mark> assume fictional roles</i><br>
+<em>Playing a tabletop game,</em> any game played on a flat surface<br>
+<small>Playing a video game,</small> <br><sub>an electronic game with a video interface</sub><br>
+<ins>Esports</ins><br><del> competitive</del> <br>video gaming<br>
+<sup>Video game culture</sup><br>
+Gaming, a character in 2026 video game Genshin Impact<br>
+    </p>
+    </section>
+     <section id="genre">
+    <br>
+    <table style="width:20%">
+  <tr>
+    <th style="height:50px">games</th>
+  </tr>
+  <tr>
+    <td>RPGs</td>
+  </tr>
+  <tr>
+    <td>simulation</td>
+  </tr>
+  <tr>
+    <td>Sports</td>
+  </tr><tr>
+    <td>Survival</td>
+  </tr><tr>
+    <td>puzzle</td>
+  </tr>
+</table>
+    <h2>list of games</h2>
+    <ul>
+  <li>First-Person Shooter</li>
+<li>Action-Adventure	</li>
+<li>Role-Playing Games	</li>
+<li>Battle Royale Games	</li>
+<li>Racing Games	</li>
+<li>Open-World Games</li>
+    </ul>
+    <ol>
+<li>Fighting Games	</li>
+<li>Horror Games	
+</li>
+<li>MMORPGs</li>
+<li>Metroidvania	
+</li>
+<li>Real-Time Strategy Games</li>
+</ol>  
+<dl>
+  <dt>shooters,</dt>
+  <dd> action-adventure</dd>
+  <dt>strategy</dt>
+  <dd>battle royale</dd>
+  <dt>racing</dt>
+  <dd>horror</dd>
+</dl>
+<br>
+<p id="demo">using JavaScript can change to HTML content.</p>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello player!"; document.getElementById("demo").style.fontSize = "35px";'>Me!</button>
+<button onclick="alert('I Heard you are a player.Nice to meet you Iam the coach!')" style="background-color: #059862; color: white; padding: 10px 20px; border: none; border-radius: 5px;">SHOULD KNOW</button>
+<p id="yo"></p>
+<p id="this"></p>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<br>
+<button onclick="getLocation()">location</button>
+
+<p id="loc"></p>
+
+<script>
+const x = document.getElementById("loc");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function success(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function error() {
+  alert("Sorry, no position available.");
+}
+</script>
+<br>
+
+
+<video width="400" controls>
+  <source src="cloud.mp4" type="video/mp4">
+</video>
+<script>
+  
+function myFunction() {
+  document.getElementById("yo").innerHTML = "My gameplay has changed!";
+}
+document.getElementById("yo").innerHTML = "My gameplay";
+let bx = 5;
+const fname = "pointers";
+
+document.getElementById("this").innerHTML =  bx +" "+ fname + " game";
+</script>
+<button type="button" onclick="myFunction()">Try it</button>
+
+</section>
+
+ <section id="game">
+  <p id="gamelist"></p>
+<script>
+const top = ["Minecraft", "Roblox", "Fortnite", "League of Legends", "PUBG Mobile/BGMI", "Call of Duty: Mobile"];
+
+let text = "";
+for (let i = 0; i < top.length; i++) {
+  text += top[i] + "<br>";
+}
+
+document.getElementById("gamelist").innerHTML = text;
+</script>
+  <p style="font-size:30px">Lets &#71;&#79; &#128151</p> 
+<br>
+<img src="Qp-eRg.gif" alt="Computer man" style="width:480px;height:480px;">
+<br>
+<a href="https://www.google.com/"><img src="mg.jpeg" alt="🎮 " style="width:420px;height:320px;"></a><br>
+    <a href="https://en.wikipedia.org/wiki/Gaming" >Visit Wikipedia! </a><br>
+      <a href="https://www.reddit.com/r/gaming/" target="_blank">Visit reddit! </a><br>
+    <img src="gam.png" alt=" gaming" width="460" height="345" >
+    <p style="color:MediumSeaGreen;" class="dashed" > 
+      <!-- this website is about gaming -->
+      Types of gaming are broadly categorized by<q>genre, like Action, RPG, Strategy, Simulation, Sports, Puzzle, and Adventure, often blended (Action-Adventure, RPG Shooter), focusing on gameplay (FPS, Platformer, Battle Royale) or player engagement (Sandbox, MMO, Casual, Party). Games can also be classified by platform (PC, Console, Mobile) or monetization (Free-to-Play).</q><br>
+By Gameplay & Genre:<br></p>
+<p style="background-image: url('paper.png');">Action: Focuses on physical challenges, reflexes, and combat (e.g., Shooters, Fighting, Beat 'em ups).<br>
+<abbr title= "(Role-Playing Game):">RPG</abbr> Deep storytelling, character development, and fantasy worlds (e.g., JRPG, MMORPG, Action RPG).<br>
+Strategy: Emphasizes planning and tactical thinking (e.g., RTS, Tactical RPG).<br>
+Simulation: Replicates real-world activities or systems (e.g., Flight Sim, Life Sim, City Builders).<br>
+Adventure: Focuses on exploration, puzzles, and narrative.<br>
+Sports & Racing: Simulates real-world sports or vehicle competitions (e.g., Football, Kart Racing, Sim Racing).<br>
+Puzzle: Challenges logic and problem-solving skills.<br>
+Platformer: Navigating obstacles and platforms <cite style="background-color:rgba(255, 99, 71, 0.5);">Super Mario</cite>.<br>
+Survival & Horror: Focuses on resource management, tension, and suspense.<br>
+<address style="border: 2px solid Tomato;">Classifications:<br>
+Platform: PC, Console (PlayStation, Xbox, Switch), Mobile, VR.<br>
+Monetization: Free-to-Play (F2P), Premium (Paid), Subscription.<br></address>
+
+    </p>
+    </section>
+<svg width="300" height="200">
+  <polygon points="100,10 40,198 190,78 10,78 160,198 "/>
+</svg>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/01zx6FiWGhg?si=yG3aBscRuEdHtkJi&amp;start=19" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<button onclick="openForm()">Register</button>
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close" onclick="closeForm()">&times;</span>
+<form onsubmit="return submitForm()">
+
+    <label for="roll">Roll no:</label>
+  <input type="text" id="roll" name="roll"><br>
+ <label for="fname">student name:</label>
+  <input type="text" id="fname" name="fname" placeholder="firstname">
+  <input type="text" id="lname" name="lname" placeholder="lastname"><br>
+<label for="finame">father's name:</label>
+  <input type="text" id="finame" name="finame"><br>
+
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday"><br>
+
+
+  <label for="no">Mobile no:</label>
+  <input type="tel" id="no" name="no"><br>
+
+    <label for="email">Email id:</label>
+  <input type="email" id="email" name="email"><br>
+	 <label for="pwd">Password:</label>
+  <input type="password" id="pwd" name="pwd"><br>
+ <label for="gender">gender:</label>
+ <input type="radio" id="male" name="gender" value="male">
+  <label for="male">male</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">female</label><br>
+
+ <label for="Department">Department:</label>
+  <input type="checkbox" id="cse" name="cse" value="cse">
+  <label for="cse">CSE</label>
+  <input type="checkbox" id="it" name="it" value="it">
+  <label for="it">IT</label>
+  <input type="checkbox" id="ece" name="ece" value="ece">
+  <label for="ece">ECE</label>
+  <input type="checkbox" id="civil" name="civil" value="civil">
+  <label for="civil">civil</label><br>
+
+ <label for="Course">Course:</label>
+ <input list="Course"name="Course"  placeholder="---select current courses----">
+  <datalist id="Course" >
+    <option value="AI">
+    <option value="ML">
+    <option value="DL">
+    <option value="DIP">
+    <option value="Safari">
+  </datalist><br>
+
+ <label for="myfile">student photo:</label>
+  <input type="file" id="myfile" name="myfile"><br><br>
+
+<label for="City">City:</label>
+  <input type="text" id="City" name="City"><br>
+<label for="Address">Address:</label>
+ <textarea name="Address" rows="10" cols="20"></textarea><br>
+ <button type="submit">Submit</button>
+</form>
+        </div>
+        <script>
+function openForm() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+function submitForm() {
+  alert("Registration Successful!");
+  closeForm();   // close modal
+  return false;  // prevent page refresh
+}
+</script>
+</body>
+</html>

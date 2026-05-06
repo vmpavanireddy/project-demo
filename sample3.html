@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">firstname</label>
+        <input type="text" name="" id="fname" /><br />
+        <label for="">last name</label>
+        <input type="text" name="" id="lname" /><br />
+        <label for="">email</label>
+        <input type="text" name="" id="email" /><br />
+        <button type="button" onclick="adduser()">add user</button>
+        <label for="phone1">Phone:</label>\n<!-- tel input -->\n<input type="tel" id="phone1" name="phone1"><br><br>
+<label for="color2">Color:</label>\n<!-- color input -->\n<input type="color" id="color2" name="color2"><br><br>
+<label for="range3">Range:</label>\n<!-- range input -->\n<input type="range" id="range3" name="range3" min="0" max="100"><br><br>
+<label for="search4">Search:</label>\n<!-- search input -->\n<input type="search" id="search4" name="search4"><br><br>
+<label for="week5">Week:</label>\n<!-- week input -->\n<input type="week" id="week5" name="week5"><br><br>
+
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+            </tr>
+        <tbody></tbody>
+        </thead>
+    </table>
+    <script>
+        let allusers = [];
+
+        function adduser() {
+            let user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+            }
+            allusers.push(user)
+            console.log("add user called", allusers);
+            localStorage.setitem("allusers", JSON.stringify(allusers))
+            displayuser();
+            clearform();
+        }
+        function clearform() {
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("email").value = "";
+
+        }
+        function displayuser() {
+
+            allusers.forEach(function (user) {
+                document.querySelector.innerHTML("tbody") = "";
+                let mytr = document.createElement("tr");
+                mytr.innerHTML = `<td>${user.fname}</td>
+                                <td>${user.lname}</td>
+                                <td>${user.email}</td>`
+                document.querySelector("body").append(mytr);
+            })
+        }
+    </script>
+</body>
+
+</html>

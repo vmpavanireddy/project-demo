@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var age = 20;
+
+        if (age >= 18) {
+            document.writeln("you are eligible to vote");
+        } else {
+            document.writeln("you are not eligible to vote");
+        }
+
+        var marks = 85;
+        if (marks >= 90) {
+            document.writeln("higher");
+        } else if (marks >= 60) {
+            document.writeln("average ");
+        } else {
+            document.writeln("lower");
+        }
+        switch (marks) {
+            case 90:
+                document.writeln("higher");
+                break;
+            case 60:
+                document.writeln("average");
+                break;
+            default:
+                document.writeln("lower");
+        }
+        //ternary operator
+        marks <= 60 && document.writeln("marks are lower !!!");
+        //condition ? true : false
+        marks >= 90 ? document.writeln("higher") : document.writeln("lower");
+        
+    </script>
+</body>
+</html>

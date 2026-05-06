@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+<script>
+    var student=["pavani","divya","deepthi","jyothi","murali"];
+    
+    console.log("Number of students:", student.length);
+    console.log("Student names:", student);
+    console.log("First student:", student[0]);
+    console.log("Last student:", student[student.length - 1]);
+    //adding values in an array
+    //push in first
+    //unshift in last
+    //to add in middle we can use splice
+    student.push("sita");
+    student.unshift("siri");
+    student.splice(2, 0, "vani"); 
+    //in middle we can either add next by next or delete the values on particular index and add new value
+    student.splice(2, 1, "anu"); 
+    //deleting values in an array
+    //pop in first
+    //shift in last
+    //to delete in middle we can use splice
+    student.pop();
+    student.shift();
+    student.splice(2, 1);
+    //sort
+    student.sort();
+    //reverse sort
+    student.sort().reverse();
+    document.writeln(student);
+
+    //loop
+    for(
+        i=0;//initialization
+        i<student.length;//condition/comparision
+        i++)//increment
+        {
+        document.writeln(student[i]+"<br/>");
+    }
+    //in method inside having a function is called as callback function
+    student.forEach(function(name){
+        document.writeln(name+"<br/>");
+    });
+
+    let students_1 = ["Ravi","Anil","Sita","Kiran","Ajay"];
+    for(let i=0; i<students_1.length; i++){
+        document.writeln(students_1[i]+"<br/>");
+    }
+    students_1.forEach(function(name){
+        document.writeln(name+"<br/>");
+    });
+    document.writeln("Total number of students:", students_1.length);
+
+    let products = ["Laptop", "Mouse", "Keyboard"];
+    products.unshift("Monitor");
+    products.push("Printer");
+    products.forEach(function(product){
+        document.writeln(product+"<br/>");
+    });
+
+    let names = ["Ram", "Shyam", "Arun","David"];
+    names.shift();
+    names.forEach(function(name){
+        document.writeln(name+"<br/>");
+    });
+
+    let subjects = ["Math", "Science", "English"];
+    subjects.splice(1, 0, "Computer");
+    subjects.forEach(function(subject){
+        document.writeln(subject+"<br/>");
+    });
+
+        let fruits = ["Apple","Banana","Mango", "Orange"];
+        fruits.splice(2, 1);
+        fruits.forEach(function(fruit){
+            document.writeln(fruit);
+        });
+
+        let marks = [78,45,90,62,55];
+        marks.sort();
+        marks.forEach(function(mark){
+            document.writeln(mark);
+        });
+        marks.sort().reverse();
+        marks.forEach(function(mark){
+            document.writeln(mark);
+        });
+
+        let tasks = ["Wake up", "Brush", "Exercise", "Breakfast"];
+        let sortedTasks = tasks.reverse()
+        tasks.forEach(function(sortedTasks){
+            document.writeln(sortedTasks);
+        });
+
+        let movies = ["Inception", "Avatar","Titanic"];
+        movies.unshift("Interstellar");
+        movies.push("Joker");
+        movies.splice(2,1);
+        movies.forEach(function(movie){
+            document.writeln(movie);
+        });
+
+        let expenses = [120, 50, 300, 80];
+        expenses.push(200);
+        expenses.pop();
+        expenses.sort();
+        expenses.forEach(function(expense){
+            document.writeln(expense);
+        });
+
+        let arr = [5,2,9,1,7];
+        arr.push(10);
+        arr.unshift(0);
+        arr.pop();
+        arr.shift();
+        arr.sort();
+        arr.reverse();
+        arr.forEach(function(num){
+            document.writeln(num);
+        });
+
+        var students = ["akis", "vaishu", "karthika", "pavani"];
+        students.forEach(function(val, index,arr){
+            document.writeln(val+" - Index: "+index+"<br/>");
+            document.writeln(arr+"<br/>");
+        });
+        //creting a new array by using map method
+        const newStudents = students.map(function(val){
+            return val + "VMR INFOTECH";
+                });
+                //displaying
+                newStudents.forEach(function(student){
+                    document.writeln(student+"<br/>");
+                });
+    </script>
+</body>
+</html>
