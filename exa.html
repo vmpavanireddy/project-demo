@@ -92,15 +92,15 @@
 
 <textarea rows="5" cols="30">
 Write your review...
-</textarea
+</textarea>
 <form>
     <h2>Gaming Profile</h2>
-    
+
     <label for="fullname">Full Name:</label>
     <!-- Full name input -->
     <input type="text" id="fullname" name="fullname" required><br><br>
-    
-        <label for="gamer_email">Email:</label>
+
+    <label for="gamer_email">Email:</label>
     <input type="email" id="gamer_email" name="gamer_email"><br><br>
 
     <label for="level">Gaming Level:</label>
@@ -131,10 +131,9 @@ Write your review...
     <label for="bio">Bio:</label>
     <textarea id="bio" name="bio" rows="4" cols="30"></textarea><br><br>
 
-    <label>Gender:</label><br>
-    <input type="radio" id="male" name="gender" value="male"> Male<br>
-    <input type="radio" id="female" name="gender" value="female"> Female<br>
-    <input type="radio" id="other" name="gender" value="other"> Other<br><br>
+    <label>Gaming Mode:</label><br>
+    <input type="radio" id="mode_casual" name="mode" value="casual"> Casual<br>
+    <input type="radio" id="mode_ranked" name="mode" value="ranked"> Ranked<br><br>
 
     <label><input type="checkbox" id="newsletter" name="newsletter"> Subscribe to newsletter</label><br><br>
 
@@ -144,28 +143,10 @@ Write your review...
     <label for="play_time">Preferred Play Time:</label>
     <input type="time" id="play_time" name="play_time"><br><br>
 
-    <label for="search_game">Search Favorite Game:</label>
-    <input type="search" id="search_game" name="search_game"><br><br>
-
-    <label for="game_search">Search Game:</label>
-    <input type="search" id="game_search" name="game_search" placeholder="Search your game"><br><br>
-
-    <label for="player_color">Player Color:</label>
-    <input type="color" id="player_color" name="player_color"><br><br>
-
-    <label for="skill_rating">Skill Rating:</label>
-    <input type="range" id="skill_rating" name="skill_rating" min="1" max="100"><br><br>
-
-    <label for="gaming_hours">Gaming Hours:</label>
-    <input type="time" id="gaming_hours" name="gaming_hours"><br><br>
-
     <label for="last_login">Last Login:</label>
     <input type="datetime-local" id="last_login" name="last_login"><br><br>
 
-    <label for="screenshot">Profile Screenshot:</label>
-    <input type="file" id="screenshot" name="screenshot"><br><br>
-
-<input type="submit" value="Submit">
+    <input type="submit" value="Submit">
 </form>
 </body>
 </html>
