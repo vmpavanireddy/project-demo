@@ -1,143 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Every Form Example</title>
     <style>
-        body {
-            color: black;
-        }
-    </style>
-    <style>
-        h1 {
-            color: blue;
-        }
-    </style>
-    <style>
-        p {
-            color: green;
-        }
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        form { max-width: 500px; margin: auto; }
+        label { display: block; margin-top: 12px; }
+        input, select, textarea { width: 100%; padding: 8px; margin-top: 6px; box-sizing: border-box; }
+        .button-row { margin-top: 16px; display: flex; gap: 10px; }
     </style>
 </head>
-
 <body>
-    <h1>Hello</h1>
-    <p>welcome.</p>
-    <h2 style="color:black;">My Website</h2>
-    <ul>
-        <li style="color:red;">peace</li>
-        <li style="color:blue;">war</li>
-        <li style="color:green;">lifeß</li>
-    </ul>
-    <button style="color:white; background-color:blue;">
-        Click
-    </button>
-    <a href="#" style="color:red;">Home</a> |
-    <a href="#" style="color:blue;">About</a> |
-    <a href="#" style="color:green;">Contact</a>
-    <form>
-        Username:<br>
-        <input type="text"><br><br>
+    <h1>Every Form Example</h1>
+    <p>This page demonstrates different HTML input types in one form.</p>
 
-        Password:<br>
-        <input type="password"><br><br>
+    <form action="#" method="post">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
 
-        <input type="submit" value="Login">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" max="120">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="color">Favorite Color:</label>
+        <input type="color" id="color" name="color">
+
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website">
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="search">Search:</label>
+        <input type="search" id="search" name="search" placeholder="Search games or topics">
+
+        <label for="avatar">Upload Avatar:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/*">
+
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself"></textarea>
+
+        <label>Preferred Platform:</label>
+        <select id="platform" name="platform">
+            <option value="pc">PC</option>
+            <option value="console">Console</option>
+            <option value="mobile">Mobile</option>
+        </select>
+
+        <div class="button-row">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
     </form>
-    <table border="1">
-<tr>
-<th>Name</th>
-<th>Age</th>
-<th>Course</th>
-</tr>
-
-<tr>
-<td>Pavani</td>
-<td>20</td>
-<td>CSE</td>
-</tr>
-
-<h1>My Links <mark>important</mark></h1>
-
-<a href="https://www.google.com">Google</a><br>
-<a href="https://www.youtube.com">YouTube</a><br>
-<a href="https://www.github.com">GitHub</a>
-
-</table>
 </body>
-
-</html><label for="field1">Field 1:</label>
-<!-- Field 1 input -->
-<input type="text" id="field1" name="field1" required><br><br>
-<label for="field2">Field 2:</label>
-<!-- Field 2 input -->
-<input type="text" id="field2" name="field2" required><br><br>
-<label for="field3">Field 3:</label>
-<!-- Field 3 input -->
-<input type="text" id="field3" name="field3" required><br><br>
-<label for="field4">Field 4:</label>
-<!-- Field 4 input -->
-<input type="text" id="field4" name="field4" required><br><br>
-<label for="field5">Field 5:</label>
-<!-- Field 5 input -->
-<input type="text" id="field5" name="field5" required><br><br>
-<label for="field6">Field 6:</label>
-<!-- Field 6 input -->
-<input type="text" id="field6" name="field6" required><br><br>
-<label for="field7">Field 7:</label>
-<!-- Field 7 input -->
-<input type="text" id="field7" name="field7" required><br><br>
-<label for="field8">Field 8:</label>
-<!-- Field 8 input -->
-<input type="text" id="field8" name="field8" required><br><br>
-<label for="field9">Field 9:</label>
-<!-- Field 9 input -->
-<input type="text" id="field9" name="field9" required><br><br>
-<label for="field10">Field 10:</label>
-<!-- Field 10 input -->
-<input type="text" id="field10" name="field10" required><br><br>
-<label for="ftext">Full Name:</label>\n<!-- Full name input -->\n<input type="text" id="ftext" name="ftext" required><br><br>
-<label for="femail">Email:</label>\n<!-- Email input -->\n<input type="email" id="femail" name="femail" required><br><br>
-<label for="fpass">Password:</label>\n<!-- Password input -->\n<input type="password" id="fpass" name="fpass" required><br><br>
-<label for="fnumber">Age:</label>\n<!-- Number input -->\n<input type="number" id="fnumber" name="fnumber" min="1" max="120"><br><br>
-<label for="fdate">Date of Birth:</label>\n<!-- Date input -->\n<input type="date" id="fdate" name="fdate"><br><br>
-<label for="ftel">Phone:</label>\n<!-- Tel input -->\n<input type="tel" id="ftel" name="ftel"><br><br>
-<label for="furl">Website:</label>\n<!-- URL input -->\n<input type="url" id="furl" name="furl"><br><br>
-<label>Subscribe:</label>\n<!-- Checkbox input -->\n<input type="checkbox" id="fcheckbox" name="fcheckbox"> <label for="fcheckbox">Yes</label><br><br>
-<label>Gender:</label>\n<!-- Radio inputs -->\n<input type="radio" id="fradio1" name="fradio" value="male"> <label for="fradio1">Male</label><br>\n<input type="radio" id="fradio2" name="fradio" value="female"> <label for="fradio2">Female</label><br><br>
-<label for="fselect">Country:</label>\n<!-- Select input -->\n<select id="fselect" name="fselect">\n  <option value="us">United States</option>\n  <option value="ca">Canada</option>\n  <option value="uk">UK</option>\n</select><br><br>
-<label for="color11">Favorite Color:</label>\n<!-- Color input -->\n<input type="color" id="color11" name="color11"><br><br>
-<label for="week12">Week:</label>\n<!-- Week input -->\n<input type="week" id="week12" name="week12"><br><br>
-<label for="month13">Month:</label>\n<!-- Month input -->\n<input type="month" id="month13" name="month13"><br><br>
-<label for="time14">Time:</label>\n<!-- Time input -->\n<input type="time" id="time14" name="time14"><br><br>
-<label for="range15">Range:</label>\n<!-- Range input -->\n<input type="range" id="range15" name="range15" min="0" max="100"><br><br>
-<label for="search16">Search:</label>\n<!-- Search input -->\n<input type="search" id="search16" name="search16"><br><br>
-<label for="tel17">Telephone:</label>\n<!-- tel input -->\n<input type="tel" id="tel17" name="tel17"><br><br>
-<label for="file18">Upload:</label>\n<!-- File input -->\n<input type="file" id="file18" name="file18"><br><br>
-<label for="url19">Portfolio URL:</label>\n<!-- URL input -->\n<input type="url" id="url19" name="url19"><br><br>
-<label for="hidden20">Hidden:</label>\n<!-- Hidden input -->\n<input type="hidden" id="hidden20" name="hidden20" value="hiddenValue"><br><br>
-<label for="datetime21">Date Time:</label>\n<!-- Datetime Local input -->\n<input type="datetime-local" id="datetime21" name="datetime21"><br><br>
-<label for="email222">Work Email:</label>\n<!-- Email with multiple -->\n<input type="email" id="email222" name="email222" multiple><br><br>
-<label for="rating23">Rating:</label>\n<!-- Number with step -->\n<input type="number" id="rating23" name="rating23" min="1" max="5" step="0.5"><br><br>
-<label for="userurl24">User Profile URL:</label>\n<!-- URL with pattern -->\n<input type="url" id="userurl24" name="userurl24" pattern="https://.*"><br><br>
-<label for="username25">Username:</label>\n<!-- Text with maxlength -->\n<input type="text" id="username25" name="username25" maxlength="20"><br><br>
-<label for="code26">Postal Code:</label>\n<!-- Text with minlength -->\n<input type="text" id="code26" name="code26" minlength="5"><br><br>
-<label for="desc27">Description:</label>\n<!-- Textarea -->\n<textarea id="desc27" name="desc27" rows="4" cols="50" placeholder="Enter description"></textarea><br><br>
-<label for="browser28">Browser:</label>\n<!-- Datalist -->\n<input type="text" id="browser28" name="browser28" list="browsers28"><datalist id="browsers28">\n  <option value="Chrome">\n  <option value="Firefox">\n  <option value="Safari">\n</datalist><br><br>
-<fieldset>\n<legend>Contact Type:</legend>\n<input type="radio" id="email29" name="ctype29" value="email"> <label for="email29">Email</label><br>\n<input type="radio" id="phone29" name="ctype29" value="phone"> <label for="phone29">Phone</label>\n</fieldset><br><br>
-<label for="score30">Final Score:</label>\n<!-- Output -->\n<output id="score30" name="score30">0</output><br><br>
-<label for="experience">Experience Level:</label>
-        <input type="range" id="experience" name="experience" min="0" max="10"><br><br>
-
-        <label for="start_time">Start Time:</label>
-        <input type="time" id="start_time" name="start_time"><br><br>
-
-        <label for="appointment">Appointment:</label>
-        <input type="datetime-local" id="appointment" name="appointment"><br><br>
-
-        <label for="document">Upload Document:</label>
-        <input type="file" id="document" name="document"><br><br>
-<input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+</html>
