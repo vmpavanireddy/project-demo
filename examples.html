@@ -6,13 +6,69 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        console.log("Hello, World!");
-        document.body.innerHTML = "<h1>Hello, World!</h1>";
-        let name = "pavani";
-        console.log("Hello, " + name + "!");
-        let age = 21;
-        console.log("Age: " + age);
-    </script>
+    <h1>Input Types Examples</h1>
+    <p>This page demonstrates various HTML input types in a single form.</p>
+
+    <form action="#" method="post">
+        <label for="fullname">Full Name:</label>
+        <!-- Full name input -->
+        <input type="text" id="fullname" name="fullname" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" max="120"><br><br>
+
+        <label for="birthdate">Birth Date:</label>
+        <input type="date" id="birthdate" name="birthdate"><br><br>
+
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website"><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <label for="color">Favorite Color:</label>
+        <input type="color" id="color" name="color"><br><br>
+
+        <label for="experience">Experience Level:</label>
+        <input type="range" id="experience" name="experience" min="0" max="10"><br><br>
+
+        <label for="starttime">Start Time:</label>
+        <input type="time" id="starttime" name="starttime"><br><br>
+
+        <label for="appointment">Appointment:</label>
+        <input type="datetime-local" id="appointment" name="appointment"><br><br>
+
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume"><br><br>
+
+        <label for="search">Search:</label>
+        <input type="search" id="search" name="search" placeholder="Search..."><br><br>
+
+        <label><input type="checkbox" id="agree" name="agree"> I agree to terms</label><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male"> Male
+        <input type="radio" id="female" name="gender" value="female"> Female<br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="">Select a country</option>
+            <option value="us">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="canada">Canada</option>
+        </select><br><br>
+
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="4" cols="40" placeholder="Tell us about yourself"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
 </body>
 </html>
