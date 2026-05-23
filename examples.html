@@ -70,5 +70,12 @@
         <input type="submit" value="Submit">
         <input type="reset" value="Reset">
     </form>
+    <script>
+        // Example JavaScript to handle form submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+            alert('Form submitted!');
+        });
+    </script>
 </body>
 </html>
