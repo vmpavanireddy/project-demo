@@ -79,7 +79,7 @@
             border: 1px solid #ff5959;
             border-radius: 5px;
         }
-        // pseudo-class example
+        /* pseudo-class example */
         .button {
             background-color: #ff5959;
             color: #fff;
@@ -92,8 +92,52 @@
         .button:hover {
             background-color: #ffca3a;
         }   
-        
-    </style>
+        /* pseudo-element example */
+        .container::before {
+            content: "Welcome to CSS Example";
+            display: block;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ff5959;
+        }
+        /* attribute selector example */
+        [data-highlight] {
+            background-color: #ffca3a;
+            padding: 10px;  
+            border: 1px solid #ff5959;
+            border-radius: 5px;
+        }
+        /* CSS variables example */
+        :root {
+            --primary-color: #ff5959;
+            --secondary-color: #ffca3a;     
+        }
+        /* CSS grid example */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+        /* CSS transitions example */
+        .transition-example {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .transition-example:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.1);
+        }
 </head>
 <body>
     
