@@ -159,6 +159,24 @@
             cursor: pointer;
             animation: bounce 2s infinite;
         }
+        /* CSS pseudo-class example */
+        .pseudo-class-example {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .pseudo-class-example:focus {
+            outline: none;
+            box-shadow: 0 0 5px var(--secondary-color);
+        }
+        /* CSS pseudo-element example */
+        .pseudo-element-example::after {
+            content: " (Click me)";
+            color: var(--secondary-color);
+        }   
     </style>
 </head>
 <body>
