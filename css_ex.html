@@ -177,9 +177,34 @@
             content: " (Click me)";
             color: var(--secondary-color);
         }   
+
     </style>
 </head>
 <body>
-    
+    /* HTML content */
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item">Grid Item 1</div>
+            <div class="grid-item">Grid Item 2</div>
+            <div class="grid-item">Grid Item 3</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">Flex Item 1</div>
+            <div class="flex-item">Flex Item 2</div>
+            <div class="flex-item">Flex Item 3</div>
+        </div>
+        <button class="button">Hover Me</button>
+        <div data-highlight>Attribute Selector Example</div>
+        <button class="transition-example">Transition Example</button>
+        <button class="animation-example">Animation Example</button>    
+        <button class="pseudo-class-example">Pseudo-Class Example</button>
+        <button class="pseudo-element-example">Pseudo-Element Example</button>
+    </div>
+    // JavaScript example
+    <script>
+        document.querySelector('.button').addEventListener('click', function() {
+            alert('Button clicked!');
+        });
+    </script>
 </body>
 </html>
