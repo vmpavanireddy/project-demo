@@ -139,6 +139,24 @@
                 newStudents.forEach(function(student){
                     document.writeln(student+"<br/>");
                 });
+                //filter method
+                const filteredStudents = students.filter(function(val){
+                    return val.length > 5;
+                });
+                filteredStudents.forEach(function(student){
+                    document.writeln(student+"<br/>");
+                });
+                //reduce method
+                const totalLength = students.reduce(function(accumulator, val){
+                    return accumulator + val.length;
+                }, 0);
+                document.writeln("Total length of student names: "+totalLength);    
+                //find method
+                const foundStudent = students.find(function(val){
+                    return val.startsWith("p");
+                });
+                document.writeln("First student starting with 'p': "+foundStudent); 
+                
     </script>
 </body>
 </html>
