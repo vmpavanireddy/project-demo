@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Restaurant</title>
+</head>
+<style>
+    /* navbar horizontal */
+    nav {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    /* table for menu items */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+    <h1>Welcome to My Restaurant</h1>
+    <p>Enjoy our delicious food!</p>
+    <p>We offer a variety of dishes to satisfy your taste buds.</p>
+    <table>
+        <tr>
+            <th>Dish Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Pizza</td>
+            <td>Delicious cheese pizza with fresh toppings.</td>
+            <td>$10.99</td>
+            <td>
+                <button onclick="addToCart('Pizza')">Add</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Burger</td>
+            <td>Juicy beef burger with lettuce, tomato, and cheese.</td>
+            <td>$8.99</td>
+            <td>
+                <button onclick="addToCart('Burger')">Add</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Pasta</td>
+            <td>Classic Italian pasta with marinara sauce.</td>
+            <td>$12.99</td>
+            <td>
+                <button onclick="addToCart('Pasta')">Add</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Salad</td>
+            <td>Fresh garden salad with your choice of dressing.</td>
+            <td>$7.99</td>
+            <td>
+                <button onclick="addToCart('Salad')">Add</button>
+            </td>
+        </tr>
+    </table>
+<h1>Welcome to My Restaurant</h1>
+    <p>Enjoy our delicious food!</p>
+    <p>We offer a variety of dishes to satisfy your taste buds.</p>
+        <table>
+            <tr>
+                <th>Dish Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Pizza</td>
+                <td>Delicious cheese pizza with fresh toppings.</td>
+                <td>$10.99</td>
+            </tr>
+            <tr>
+                <td>Burger</td>
+                <td>Juicy beef burger with lettuce, tomato, and cheese.</td>
+                <td>$8.99</td>
+            </tr>
+            <tr>
+                <td>Pasta</td>
+                <td>Classic Italian pasta with marinara sauce.</td>
+                <td>$12.99</td>
+            </tr>
+            <tr>
+                <td>Salad</td>
+                <td>Fresh garden salad with your choice of dressing.</td>
+                <td>$7.99</td>
+            </tr>
+        </table>
+    <div class="card">
+        <h4>Special Dish</h4>
+        <p>Try our chef's special for the day!</p>
+        <p>Omlette ostroid</p>
+        <button onclick="addToCart('Omlette ostroid')">Add</button>
+    </div>
+    <div class="card">
+        <h4>New Dish</h4>
+        <p>Introducing our latest addition to the menu!</p>
+        <p>Grilled Salmon with Lemon Butter Sauce</p>
+        <button onclick="addToCart('Grilled Salmon with Lemon Butter Sauce')">Add</button>
+    </div>
+    <div class="card">
+        <h4>Chef's Recommendation</h4>
+        <p>Our chef highly recommends this dish for a delightful experience.</p>
+        <p>Truffle Risotto with Parmesan Cheese</p>
+        <button onclick="addToCart('Truffle Risotto with Parmesan Cheese')">Add</button>
+    </div>
+    <div class="card">
+        <h4>Seasonal Special</h4>
+        <p>Enjoy the flavors of the season with our special dish.</p>
+        <p>Butternut Squash Soup with Sage</p>
+        <button onclick="addToCart('Butternut Squash Soup with Sage')">Add</button>
+    </div>
+    <div class="card">
+        <h4>Vegetarian Delight</h4>
+        <p>A delicious vegetarian option for our guests.</p>
+        <p>Stuffed Bell Peppers with Quinoa and Black Beans</p>
+        <button onclick="addToCart('Stuffed Bell Peppers with Quinoa and Black Beans')">Add</button>
+    </div>
+    <button onclick="reserveTable()">Reserve a Table</button>
+    <h2>Your Cart</h2>
+    <ul id="cart"></ul>
+
+    <script>
+        let reserved = false;
+
+        function reserveTable() {
+            reserved = true;
+            alert("Table Reserved! Now you can add dishes.");
+        }
+
+        function addToCart(dish) {
+            if (!reserved) {
+                alert("Please reserve a table first!");
+                return;
+            }
+
+            let cart = document.getElementById("cart");
+            let li = document.createElement("li");
+            li.textContent = dish;
+            cart.appendChild(li);
+        }
+    </script>
+    </div>
+            <button class="btn">Reserve a Table</button>
+
+</body>
+
+</html>
