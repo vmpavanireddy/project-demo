@@ -49,8 +49,46 @@
 
     .card {
         border: 1px solid #ccc;
-        padding: 10px;
-        margin: 10px 0;
+        padding: 12px;
+        margin: 12px 0;
+    }
+
+    /* Image left */
+    .card img {
+        float: left;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-right: 15px;
+        border-radius: 8px;
+    }
+
+    /* 🔥 REMOVE default spacing (THIS is the fix) */
+    .card p,
+    .card h4 {
+        margin: 0;
+    }
+
+    /* Add controlled spacing */
+    .card p+p {
+        margin-top: 5px;
+    }
+
+    .card h4 {
+        margin-bottom: 5px;
+    }
+
+    /* Button spacing */
+    .card button {
+        display: block;
+        margin-top: 8px;
+    }
+
+    /* Clear float */
+    .card::after {
+        content: "";
+        display: block;
+        clear: both;
     }
 
     /* table for menu items */
@@ -65,6 +103,33 @@
         padding: 10px;
         text-align: left;
     }
+
+    .hero img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        /* keeps it clean like banner */
+    }
+
+    #preview {
+        position: fixed;
+        pointer-events: none;
+        /* prevents flicker */
+        z-index: 1000;
+    }
+
+    #preview img {
+        width: 180px;
+        height: 130px;
+        object-fit: cover;
+        display: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #preview {
+        pointer-events: none;
+    }
 </style>
 
 <body>
@@ -75,6 +140,12 @@
             <li><a href="about.html">About Us</a></li>
         </ul>
     </nav>
+    <div id="preview">
+        <img id="previewImg">
+    </div>
+    <div class="hero">
+        <img src="res.png" alt="Restaurant Banner">
+    </div>
     <h1>Welcome to My Restaurant</h1>
     <p>Enjoy our delicious food!</p>
     <p>We offer a variety of dishes to satisfy your taste buds.</p>
@@ -89,7 +160,10 @@
             <td>Delicious cheese pizza with fresh toppings.</td>
             <td>$10.99</td>
             <td>
-                <button onclick="addToCart('Pizza')">Add</button>
+                <button onmouseover="showImage(event, 'piz.png')" onmousemove="moveImage(event)"
+                    onmouseout="hideImage()" onclick="addToCart('Pizza',10.99)">
+                    Add
+                </button>
             </td>
         </tr>
 
@@ -98,7 +172,10 @@
             <td>Juicy beef burger with lettuce, tomato, and cheese.</td>
             <td>$8.99</td>
             <td>
-                <button onclick="addToCart('Burger')">Add</button>
+                <button onmouseover="showImage(event, 'bur.png')" onmousemove="moveImage(event)"
+                    onmouseout="hideImage()" onclick="addToCart('Pizza',10.99)">
+                    Add
+                </button>
             </td>
         </tr>
         <tr>
@@ -106,7 +183,10 @@
             <td>Classic Italian pasta with marinara sauce.</td>
             <td>$12.99</td>
             <td>
-                <button onclick="addToCart('Pasta')">Add</button>
+                <button onmouseover="showImage(event, 'pas.png')" onmousemove="moveImage(event)"
+                    onmouseout="hideImage()" onclick="addToCart('Pizza',10.99)">
+                    Add
+                </button>
             </td>
         </tr>
         <tr>
@@ -114,97 +194,162 @@
             <td>Fresh garden salad with your choice of dressing.</td>
             <td>$7.99</td>
             <td>
-                <button onclick="addToCart('Salad')">Add</button>
+                <button onmouseover="showImage(event, 'sal.png')" onmousemove="moveImage(event)"
+                    onmouseout="hideImage()" onclick="addToCart('Pizza',10.99)">
+                    Add
+                </button>
             </td>
         </tr>
     </table>
-<h1>Welcome to My Restaurant</h1>
-    <p>Enjoy our delicious food!</p>
-    <p>We offer a variety of dishes to satisfy your taste buds.</p>
-        <table>
-            <tr>
-                <th>Dish Name</th>
-                <th>Description</th>
-                <th>Price</th>
-            </tr>
-            <tr>
-                <td>Pizza</td>
-                <td>Delicious cheese pizza with fresh toppings.</td>
-                <td>$10.99</td>
-            </tr>
-            <tr>
-                <td>Burger</td>
-                <td>Juicy beef burger with lettuce, tomato, and cheese.</td>
-                <td>$8.99</td>
-            </tr>
-            <tr>
-                <td>Pasta</td>
-                <td>Classic Italian pasta with marinara sauce.</td>
-                <td>$12.99</td>
-            </tr>
-            <tr>
-                <td>Salad</td>
-                <td>Fresh garden salad with your choice of dressing.</td>
-                <td>$7.99</td>
-            </tr>
-        </table>
+    <div class="menu-image">
+    </div>
     <div class="card">
-        <h4>Special Dish</h4>
+        <img src="om.png"
+            style=" vertical-align:middle;width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
         <p>Try our chef's special for the day!</p>
         <p>Omlette ostroid</p>
-        <button onclick="addToCart('Omlette ostroid')">Add</button>
+        <button onclick="addToCart('Omlette ostroid',15.4)">Add</button>
     </div>
     <div class="card">
-        <h4>New Dish</h4>
+        <img src="salmo.png"
+            style="width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
         <p>Introducing our latest addition to the menu!</p>
         <p>Grilled Salmon with Lemon Butter Sauce</p>
-        <button onclick="addToCart('Grilled Salmon with Lemon Butter Sauce')">Add</button>
+        <button onclick="addToCart('Grilled Salmon with Lemon Butter Sauce',20.45)">Add</button>
     </div>
     <div class="card">
+        <img src="tru.png" style="width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
         <h4>Chef's Recommendation</h4>
         <p>Our chef highly recommends this dish for a delightful experience.</p>
         <p>Truffle Risotto with Parmesan Cheese</p>
-        <button onclick="addToCart('Truffle Risotto with Parmesan Cheese')">Add</button>
+        <button onclick="addToCart('Truffle Risotto with Parmesan Cheese',32.23)">Add</button>
     </div>
     <div class="card">
+        <img src="soup.png"
+            style="width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
         <h4>Seasonal Special</h4>
         <p>Enjoy the flavors of the season with our special dish.</p>
         <p>Butternut Squash Soup with Sage</p>
-        <button onclick="addToCart('Butternut Squash Soup with Sage')">Add</button>
+        <button onclick="addToCart('Butternut Squash Soup with Sage',14.5)">Add</button>
     </div>
     <div class="card">
+        <img src="bell.png"
+            style="width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
         <h4>Vegetarian Delight</h4>
         <p>A delicious vegetarian option for our guests.</p>
         <p>Stuffed Bell Peppers with Quinoa and Black Beans</p>
-        <button onclick="addToCart('Stuffed Bell Peppers with Quinoa and Black Beans')">Add</button>
+        <button onclick="addToCart('Stuffed Bell Peppers with Quinoa and Black Beans',23.43)">Add</button>
     </div>
     <button onclick="reserveTable()">Reserve a Table</button>
     <h2>Your Cart</h2>
     <ul id="cart"></ul>
+    <h2>Bill</h2>
+    <div id="bill" style="border:1px solid #ccc; padding:10px; margin-top:10px;"></div>
 
+    <button onclick="showBill()">Go to Bill</button>
     <script>
         let reserved = false;
+        let cart = [];
 
+        /* ✅ Reserve */
         function reserveTable() {
             reserved = true;
             alert("Table Reserved! Now you can add dishes.");
         }
 
-        function addToCart(dish) {
+        /* ✅ Add to cart (MERGED VERSION) */
+        function addToCart(name, price) {
             if (!reserved) {
                 alert("Please reserve a table first!");
                 return;
             }
 
-            let cart = document.getElementById("cart");
-            let li = document.createElement("li");
-            li.textContent = dish;
-            cart.appendChild(li);
-        }
-    </script>
-    </div>
-            <button class="btn">Reserve a Table</button>
+            cart.push({ name, price });
 
+            let cartList = document.getElementById("cart");
+            let li = document.createElement("li");
+            li.textContent = name + " - $" + price;
+            cartList.appendChild(li);
+        }
+
+        /* ✅ Show Bill */
+        function showBill() {
+            let billDiv = document.getElementById("bill");
+
+            let total = 0;
+            let html = "";
+
+    cart.forEach(item => {
+                html += `
+            <div class="bill-row">
+                <span>${item.name}</span>
+                <span>$${item.price}</span>
+            </div>
+        `;
+            total += item.price;
+    });
+            output += "</ul>";
+            output += "<h3>Total = $" + total + "</h3>";
+
+            billDiv.innerHTML = output;
+        }
+
+        /* ✅ Run AFTER page loads */
+        window.onload = function () {
+            let preview = document.getElementById("preview");
+            let img = document.getElementById("previewImg");
+
+            window.showImage = function (e, src) {
+                img.src = src;
+                img.style.display = "block";
+                moveImage(e);
+            }
+
+            window.moveImage = function (e) {
+                preview.style.left = (e.clientX + 15) + "px";
+                preview.style.top = (e.clientY + 15) + "px";
+            }
+
+            window.hideImage = function () {
+                img.style.display = "none";
+            }
+
+            /* 🔥 FIX: hide when not hovering table buttons */
+            document.addEventListener("mousemove", function (e) {
+                if (!e.target.closest("table button")) {
+                    img.style.display = "none";
+                }
+            });
+        }
+
+    </script>
+    <script>
+        let preview = document.getElementById("preview");
+        let img = document.getElementById("previewImg");
+
+        function showImage(e, src) {
+            img.src = src;
+            img.style.display = "block";
+            moveImage(e);
+        }
+
+        function moveImage(e) {
+            preview.style.left = (e.clientX + 15) + "px";
+            preview.style.top = (e.clientY + 15) + "px";
+        }
+
+        function hideImage() {
+            img.style.display = "none";
+        }
+
+        /* 🔥 IMPORTANT FIX */
+        document.addEventListener("mousemove", function (e) {
+            if (!e.target.closest("button")) {
+                img.style.display = "none";
+            }
+        });
+        
+    </script>
 </body>
 
 </html>
