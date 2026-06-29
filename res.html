@@ -7,11 +7,33 @@
     <title>My Restaurant</title>
 </head>
 <style>
-    /* navbar horizontal */
     nav {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+
+        padding: 12px 30px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        transition: 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-right {
+        margin-left: auto;
+        /* pushes button to right */
+        padding-right: 50px;
+        /* prevents edge touching */
+    }
+
+    nav {
+        padding: 12px 40px;
     }
 
     nav ul {
@@ -130,6 +152,765 @@
     #preview {
         pointer-events: none;
     }
+
+    h1 {
+        font-size: 36px;
+        margin-top: 20px;
+    }
+
+    table {
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+    }
+
+    table td,
+    table th {
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+    }
+
+    button {
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+
+    #bgVideo {
+        position: fixed;
+        width: 100%;
+        height: 110%;
+        object-fit: fill;
+        /* 🔥 stretches to fit */
+        z-index: -2;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.4);
+        /* lighter */
+
+        z-index: -1;
+    }
+
+    /* 🔥 CLEAN TEXT (remove ugly grey boxes) */
+    h1,
+    p {
+        background: transparent !important;
+        color: white;
+    }
+
+    table {
+        background: transparent;
+        border-collapse: separate;
+        border-spacing: 0 12px;
+    }
+
+    table tr {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(6px);
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    table td,
+    table th {
+        border: none;
+        padding: 14px;
+    }
+
+    table tr:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: scale(1.01);
+    }
+
+    body::after {
+        background: rgba(0, 0, 0, 0.6);
+        /* darker than before */
+    }
+
+    table button {
+        background: linear-gradient(135deg, #4CAF50, #66bb6a);
+        border-radius: 20px;
+        padding: 6px 14px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    table button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    }
+
+    table {
+        width: 95%;
+        margin: 30px auto;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.08);
+        /* 🔥 darker */
+        backdrop-filter: blur(10px);
+        border-radius: 14px;
+        padding: 12px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        transition: 0.3s;
+    }
+
+    /* hover lift */
+    .card:hover {
+        transform: translateY(-8px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 10px;
+
+        transition: 0.3s;
+    }
+
+    .card:hover img {
+        transform: scale(1.05);
+    }
+
+    .cards-container {
+        margin-top: 50px;
+        padding: 0 20px;
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+    }
+
+    button {
+        background: rgba(78, 186, 82, 0.9);
+
+        border: none;
+        padding: 6px 14px;
+        border-radius: 6px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+
+        transition: 0.25s;
+    }
+
+    button:hover {
+        background: linear-gradient(135deg, #e1dd8f, #e3bc86);
+        transform: scale(1.08);
+    }
+
+    table::after {
+        content: "";
+        display: block;
+        margin: 30px auto;
+        width: 90%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-divider {
+        text-align: center;
+        margin: 40px 0 20px;
+    }
+
+    .menu-divider h2 {
+        font-size: 28px;
+        color: #f5e6c8;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+
+    .menu-divider p {
+        font-size: 14px;
+        color: #bbb;
+    }
+
+    /* optional elegant line */
+    .menu-divider::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        margin: 15px auto 0;
+    }
+
+    /* 🔥 PREMIUM CARDS */
+    .card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        color: white;
+    }
+
+    /* 🔥 GENERAL TEXT COLOR */
+    body {
+        color: white;
+    }
+
+    /* 🔥 FULL WIDTH CENTER BUTTON */
+    .bill-btn {
+        display: block;
+        width: 90%;
+        margin: 20px auto;
+        /* center horizontally */
+        padding: 15px;
+
+        font-size: 18px;
+        font-weight: bold;
+
+        text-align: center;
+
+        border-radius: 10px;
+    }
+
+    nav {
+        padding: 12px 40px;
+        /* ⬅️ increased from 30px */
+    }
+
+    /* Optional styling difference */
+    .reserve-btn {
+        background-color: #4CAF50;
+    }
+
+    .bill-btn {
+        background-color: #2196F3;
+    }
+
+    .bill-btn:hover {
+        transform: scale(1.03);
+    }
+
+    /* 🔥 Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap');
+
+    /* 🔥 HERO CONTAINER */
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        /* same as your banner */
+        overflow: hidden;
+    }
+
+    /* 🔥 VIDEO BACKGROUND */
+    .hero video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    /* 🔥 DARK OVERLAY (important for readability) */
+    .hero::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    /* 🔥 TEXT OVER VIDEO */
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+    }
+
+    /* 🔥 MAIN TITLE */
+    .hero-text h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 64px;
+        color: #f5e6c8;
+        margin: 0;
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
+    }
+
+    /* 🔥 SUB TEXT */
+    .hero-text p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        color: #ddd;
+        margin-top: 10px;
+    }
+
+    /* 🔥 OPTIONAL FADE ANIMATION */
+    .hero-text {
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -40%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .reserve-btn {
+        background: linear-gradient(45deg, #d4af37, #ffd700);
+        color: #000;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+
+        /* ✅ THIS FIXES YOUR ISSUE */
+        margin-right: 20px;
+        /* space from right edge */
+
+        white-space: nowrap;
+    }
+
+    /* 🔥 NAV RIGHT BUTTON */
+    .nav-right {
+        float: right;
+    }
+
+    /* 🔥 PREMIUM GOLD BUTTON */
+    .nav-right button {
+        background: linear-gradient(135deg, #d4af37, #f5e6c8);
+        color: #2b2b2b;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+        transition: all 0.3s ease;
+    }
+
+    /* ✨ HOVER EFFECT */
+    .nav-right button:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.9),
+            0 0 40px rgba(245, 230, 200, 0.6);
+    }
+
+    /* 💫 ACTIVE (CLICK) EFFECT */
+    .nav-right button:active {
+        transform: scale(0.96);
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+    }
+
+    body {
+        margin: 0;
+    }
+
+    /* 🔥 CARD ROW */
+    .cards-container {
+        display: flex;
+        gap: 50px;
+        padding: 30px;
+        overflow-x: auto;
+    }
+
+    /* 🔥 CARD BASE */
+    .card {
+        background: #1e1e1e;
+        color: rgb(177, 176, 166);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        width: 260px;
+        border-radius: 14px;
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+    /* Hover effect */
+    .card:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9),
+            0 0 15px rgba(212, 175, 55, 0.3);
+        transform: translateY(-6px);
+    }
+
+    /* 🔥 IMAGE */
+    .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+    }
+
+    /* 🔥 CONTENT */
+    .card-content {
+        padding: 12px 14px;
+    }
+
+    /* Title */
+    .card h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    /* Description */
+    .card p {
+        font-size: 13px;
+        color: #555;
+    }
+
+    /* 🔥 BOTTOM ROW */
+    .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    /* Price */
+    .price {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    /* 🔥 BUTTON */
+    .card button {
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 6px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .card button:hover {
+        background: linear-gradient(135deg, #e1dd8f, #e3bc86);
+
+    }
+
+    /* Tag (small highlight text) */
+    .tag {
+        font-size: 12px;
+        color: #888;
+        margin-bottom: 3px;
+    }
+
+    /* Description */
+    .desc {
+        font-size: 13px;
+        color: #555;
+    }
+
+    /* Bottom row */
+    .card-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    /* Price */
+    .price {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    /* Floating Buttons */
+    .floating-buttons {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        z-index: 1000;
+    }
+
+    .floating-buttons button {
+        background: #4CAF50;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .floating-buttons button:hover {
+        background: #45a049;
+    }
+
+    /* Popup Background */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    }
+
+    .popup-content {
+        background: linear-gradient(145deg, #111, #1c1c1c);
+        color: #f5e6c8;
+        padding: 25px;
+        width: 380px;
+        border-radius: 16px;
+        text-align: left;
+
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.4),
+            0 0 60px rgba(0, 0, 0, 0.8);
+
+        border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    #popup-title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #d4af37;
+        font-weight: bold;
+    }
+
+    .bill-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .qty {
+        background: rgba(212, 175, 55, 0.2);
+        color: #d4af37;
+
+        padding: 4px 10px;
+        border-radius: 8px;
+
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
+    #total-price {
+        margin-top: 15px;
+        font-size: 20px;
+        text-align: right;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    /* Title center */
+    .popup-content h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* Items spacing */
+    #popup-items div {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0;
+        font-size: 14px;
+    }
+
+    /* Total */
+    #total-price {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffd700;
+    }
+
+    /* Close button */
+    .close-btn {
+        float: right;
+        font-size: 20px;
+        color: #aaa;
+    }
+
+    .close-btn:hover {
+        color: #fff;
+    }
+
+    /* Animation */
+    @keyframes popupFade {
+        from {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* 🔥 FLOATING BUTTONS - MATCH RESERVE STYLE */
+    .floating-buttons button {
+        background: linear-gradient(135deg, #d4af37, #f5e6c8);
+        color: #2b2b2b;
+
+        padding: 10px 16px;
+        border-radius: 10px;
+        /* 🔥 not circle anymore */
+
+        font-size: 16px;
+        font-weight: bold;
+
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+        transition: all 0.3s ease;
+    }
+
+    /* ✨ Hover like reserve */
+    .floating-buttons button:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.9),
+            0 0 40px rgba(245, 230, 200, 0.6);
+        background: linear-gradient(135deg, #d87d77, #eabe67);
+
+    }
+
+    /* 💫 Click effect */
+    .floating-buttons button:active {
+        transform: scale(0.95);
+    }
+
+    .checkout-btn {
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+
+        background: linear-gradient(45deg, #d4af37, #ffd700);
+        border: none;
+        border-radius: 10px;
+
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .checkout-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+    }
+
+    .qty-controls {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 4px 6px;
+        gap: 8px;
+    }
+
+    /* buttons */
+    .qty-controls button {
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+        border: none;
+
+        background: linear-gradient(135deg, #d4af37, #f5e6c8);
+        color: #2b2b2b;
+
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+
+        transition: all 0.2s ease;
+    }
+
+    /* hover */
+    .qty-controls button:hover {
+        transform: scale(1.15);
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+    }
+
+    /* click */
+    .qty-controls button:active {
+        transform: scale(0.9);
+    }
+
+    /* number */
+    .qty {
+        min-width: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    #toast {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 20px;
+        border-radius: 8px;
+
+        font-size: 14px;
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity 0.3s ease, bottom 0.3s ease;
+
+        z-index: 3000;
+    }
+
+    /* visible state */
+    #toast.show {
+        opacity: 1;
+        bottom: 50px;
+    }
+
+    /* 🔴 ERROR (not reserved) */
+    .toast-error {
+        background: linear-gradient(135deg, #ff4d4d, #b30000);
+    }
+
+    /* 🟢 SUCCESS (added / reserved) */
+    .toast-success {
+        background: linear-gradient(135deg, #4CAF50, #2e7d32);
+    }
+
+    /* 🟡 WARNING */
+    .toast-warning {
+        background: linear-gradient(135deg, #ffcc00, #ff9800);
+        color: #000;
+    }
 </style>
 
 <body>
@@ -139,16 +920,31 @@
             <li><a href="contact.html">Contact</a></li>
             <li><a href="about.html">About Us</a></li>
         </ul>
+
+        <!-- 🔥 ADD THIS -->
+        <div class="nav-right">
+            <button onclick="reserveTable()">Reserve Table</button>
+        </div>
     </nav>
+    <video autoplay muted loop id="bgVideo">
+        <source src="clip.mp4" type="video/mp4">
+    </video>
     <div id="preview">
         <img id="previewImg">
     </div>
     <div class="hero">
         <img src="res.png" alt="Restaurant Banner">
     </div>
-    <h1>Welcome to My Restaurant</h1>
-    <p>Enjoy our delicious food!</p>
-    <p>We offer a variety of dishes to satisfy your taste buds.</p>
+    <div class="hero">
+
+        <!-- 🔥 TEXT ON TOP -->
+        <div class="hero-text">
+            <h1>Experience Fine Dining</h1>
+            <p>Fresh ingredients. Elegant atmosphere. Unforgettable taste.</p>
+        </div>
+
+    </div>
+
     <table>
         <tr>
             <th>Dish Name</th>
@@ -173,7 +969,7 @@
             <td>$8.99</td>
             <td>
                 <button onmouseover="showImage(event, 'bur.png')" onmousemove="moveImage(event)"
-                    onmouseout="hideImage()" onclick="addToCart('Pizza',10.99)">
+                    onmouseout="hideImage()" onclick="addToCart('Burger',8.99)">
                     Add
                 </button>
             </td>
@@ -184,7 +980,7 @@
             <td>$12.99</td>
             <td>
                 <button onmouseover="showImage(event, 'pas.png')" onmousemove="moveImage(event)"
-                    onmouseout="hideImage()" onclick="addToCart('Pizza',10.99)">
+                    onmouseout="hideImage()" onclick="addToCart('Pasta',12.99)">
                     Add
                 </button>
             </td>
@@ -195,105 +991,277 @@
             <td>$7.99</td>
             <td>
                 <button onmouseover="showImage(event, 'sal.png')" onmousemove="moveImage(event)"
-                    onmouseout="hideImage()" onclick="addToCart('Pizza',10.99)">
+                    onmouseout="hideImage()" onclick="addToCart('Salad',7.99)">
                     Add
                 </button>
             </td>
         </tr>
     </table>
-    <div class="menu-image">
+    <div class="menu-divider">
+        <h2>Chef’s Specials</h2>
+        <p>Handpicked dishes crafted for a premium dining experience</p>
     </div>
-    <div class="card">
-        <img src="om.png"
-            style=" vertical-align:middle;width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
-        <p>Try our chef's special for the day!</p>
-        <p>Omlette ostroid</p>
-        <button onclick="addToCart('Omlette ostroid',15.4)">Add</button>
-    </div>
-    <div class="card">
-        <img src="salmo.png"
-            style="width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
-        <p>Introducing our latest addition to the menu!</p>
-        <p>Grilled Salmon with Lemon Butter Sauce</p>
-        <button onclick="addToCart('Grilled Salmon with Lemon Butter Sauce',20.45)">Add</button>
-    </div>
-    <div class="card">
-        <img src="tru.png" style="width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
-        <h4>Chef's Recommendation</h4>
-        <p>Our chef highly recommends this dish for a delightful experience.</p>
-        <p>Truffle Risotto with Parmesan Cheese</p>
-        <button onclick="addToCart('Truffle Risotto with Parmesan Cheese',32.23)">Add</button>
-    </div>
-    <div class="card">
-        <img src="soup.png"
-            style="width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
-        <h4>Seasonal Special</h4>
-        <p>Enjoy the flavors of the season with our special dish.</p>
-        <p>Butternut Squash Soup with Sage</p>
-        <button onclick="addToCart('Butternut Squash Soup with Sage',14.5)">Add</button>
-    </div>
-    <div class="card">
-        <img src="bell.png"
-            style="width:80px; height:80px; object-fit:cover; vertical-align:middle; margin-right:10px;">
-        <h4>Vegetarian Delight</h4>
-        <p>A delicious vegetarian option for our guests.</p>
-        <p>Stuffed Bell Peppers with Quinoa and Black Beans</p>
-        <button onclick="addToCart('Stuffed Bell Peppers with Quinoa and Black Beans',23.43)">Add</button>
-    </div>
-    <button onclick="reserveTable()">Reserve a Table</button>
-    <h2>Your Cart</h2>
-    <ul id="cart"></ul>
-    <h2>Bill</h2>
-    <div id="bill" style="border:1px solid #ccc; padding:10px; margin-top:10px;"></div>
+    <div class="cards-container">
 
-    <button onclick="showBill()">Go to Bill</button>
+        <!-- CARD 1 -->
+        <div class="card">
+            <img src="om.png">
+            <div class="card-content">
+                <h4>Omlette Ostroid</h4>
+                <p class="tag">Chef's Special</p>
+                <p class="desc">Try our chef's special for the day.</p>
+
+                <div class="card-bottom">
+                    <span class="price">$15.4</span>
+                    <button onclick="addToCart('Omlette ostroid',15.4)">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <img src="salmo.png">
+            <div class="card-content">
+                <h4>Grilled Salmon</h4>
+                <p class="tag">New Arrival</p>
+                <p class="desc">Served with lemon butter sauce.</p>
+
+                <div class="card-bottom">
+                    <span class="price">$20.45</span>
+                    <button onclick="addToCart('Grilled Salmon with Lemon Butter Sauce',20.45)">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <img src="tru.png">
+            <div class="card-content">
+                <h4>Truffle Risotto</h4>
+                <p class="tag">Chef's Recommendation</p>
+                <p class="desc">Rich parmesan cheese flavor.</p>
+
+                <div class="card-bottom">
+                    <span class="price">$32.23</span>
+                    <button onclick="addToCart('Truffle Risotto with Parmesan Cheese',32.23)">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+            <img src="soup.png">
+            <div class="card-content">
+                <h4>Butternut Squash Soup</h4>
+                <p class="tag">Seasonal Special</p>
+                <p class="desc">Warm, creamy, and full of flavor.</p>
+
+                <div class="card-bottom">
+                    <span class="price">$14.5</span>
+                    <button onclick="addToCart('Butternut Squash Soup with Sage',14.5)">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card">
+            <img src="bell.png">
+            <div class="card-content">
+                <h4>Stuffed Bell Peppers</h4>
+                <p class="tag">Vegetarian Delight</p>
+                <p class="desc">Quinoa & black beans filling.</p>
+
+                <div class="card-bottom">
+                    <span class="price">$23.43</span>
+                    <button onclick="addToCart('Stuffed Bell Peppers with Quinoa and Black Beans',23.43)">Add</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="floating-buttons">
+        <button onclick="openCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+        <button onclick="openBill()">💳 Bill</button>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+
+            <h2 id="popup-title">Your Cart & Bill</h2>
+
+            <div id="popup-items"></div>
+
+            <h3 id="total-price"></h3>
+        </div>
+    </div>
     <script>
         let reserved = false;
         let cart = [];
+        function addToCart(name, price) {
+            if (!reserved) {
+                showToast("Please reserve a table first!", "error");
+                return;
+            }
+            showToast(name + " added to cart", "success");
+            let existing = cart.find(item => item.name === name);
 
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+    showToast(name + " added to cart", "success");
+
+            // update cart count
+            document.getElementById("cart-count").innerText =
+                cart.reduce((sum, item) => sum + item.qty, 0);
+        }
         /* ✅ Reserve */
         function reserveTable() {
             reserved = true;
-            alert("Table Reserved! Now you can add dishes.");
+            showToast("Table Reserved! Now you can add dishes.", "success");
         }
 
-        /* ✅ Add to cart (MERGED VERSION) */
-        function addToCart(name, price) {
-            if (!reserved) {
-                alert("Please reserve a table first!");
+        function openCart() {
+            let popup = document.getElementById("popup");
+            let itemsDiv = document.getElementById("popup-items");
+            let totalDiv = document.getElementById("total-price");
+
+            itemsDiv.innerHTML = "";
+            totalDiv.innerHTML = "";
+
+            cart.forEach((item, index) => {
+                itemsDiv.innerHTML += `
+    <div class="bill-item">
+        <span>${item.name}</span>
+
+        <div class="qty-controls">
+            <button onclick="decreaseQty('${item.name}')">−</button>
+            <span class="qty">${item.qty}</span>
+            <button onclick="increaseQty('${item.name}')">+</button>
+        </div>
+    </div>
+`;
+            });
+
+            itemsDiv.innerHTML += `
+        <button class="checkout-btn" onclick="confirmOrder()">
+            Confirm Order
+        </button>
+    `;
+
+            popup.style.display = "flex";
+            popup.style.animation = "popupFade 0.3s ease";
+
+        }
+        function confirmOrder() {
+            if (cart.length === 0) {
+                showToast("Cart is empty!", "warning");
                 return;
             }
 
-            cart.push({ name, price });
-
-            let cartList = document.getElementById("cart");
-            let li = document.createElement("li");
-            li.textContent = name + " - $" + price;
-            cartList.appendChild(li);
+            closePopup();
+            openBill();
+        }
+        function increaseQty(name) {
+            let item = cart.find(i => i.name === name);
+            if (item) {
+                item.qty += 1;
+            }
+            updateCartUI();
         }
 
-        /* ✅ Show Bill */
-        function showBill() {
-            let billDiv = document.getElementById("bill");
+        function decreaseQty(name) {
+            let item = cart.find(i => i.name === name);
 
-            let total = 0;
+            if (item) {
+                item.qty -= 1;
+
+                // remove item if qty = 0
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.name !== name);
+                }
+            }
+
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            document.getElementById("cart-count").innerText =
+                cart.reduce((sum, item) => sum + item.qty, 0);
+
+            openCart(); // refresh UI
+        }
+        function openBill() {
+            let popup = document.getElementById("popup");
+            let itemsDiv = document.getElementById("popup-items");
+            let totalText = document.getElementById("total-price");
+
             let html = "";
+            let total = 0;
 
-    cart.forEach(item => {
+            cart.forEach(item => {
+                let itemTotal = item.price * item.qty;
+
                 html += `
-            <div class="bill-row">
-                <span>${item.name}</span>
-                <span>$${item.price}</span>
+            <div class="bill-item">
+                <span>${item.name} <span class="qty">x${item.qty}</span></span>
+                <span>$${itemTotal.toFixed(2)}</span>
             </div>
         `;
-            total += item.price;
-    });
-            output += "</ul>";
-            output += "<h3>Total = $" + total + "</h3>";
 
-            billDiv.innerHTML = output;
+                total += itemTotal;
+            });
+
+            // 🔥 ADD CHECKOUT BUTTON HERE
+            html += `
+        <button class="checkout-btn" onclick="checkout()">
+            Proceed to Checkout
+        </button>
+    `;
+
+            itemsDiv.innerHTML = html;
+            totalText.innerHTML = "Total: $" + total.toFixed(2);
+
+            popup.style.display = "flex";
+            popup.style.animation = "popupFade 0.3s ease";
         }
 
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+        function checkout() {
+showToast("Order Placed Successfully 🚀", "success");
+            cart = []; // clear cart
+
+            document.getElementById("cart-count").innerText = 0;
+
+            closePopup();
+        }
+        function showToast(message, type = "default") {
+            let toast = document.getElementById("toast");
+
+            toast.innerText = message;
+
+            // reset classes
+            toast.className = "";
+
+            // apply type
+            toast.classList.add("show");
+
+            if (type === "error") {
+                toast.classList.add("toast-error");
+            } else if (type === "success") {
+                toast.classList.add("toast-success");
+            } else if (type === "warning") {
+                toast.classList.add("toast-warning");
+            }
+
+            // auto hide
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3000);
+        }
         /* ✅ Run AFTER page loads */
         window.onload = function () {
             let preview = document.getElementById("preview");
@@ -348,8 +1316,9 @@
                 img.style.display = "none";
             }
         });
-        
+
     </script>
+    <div id="toast"></div>
 </body>
 
 </html>
