@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JavaScript code
+        // variables and data types
+        let name = "John Doe"; // string
+        let age = 30; // number
+        let isStudent = true; // boolean
+        let hobbies = ["reading", "traveling", "coding"]; // array
+        let person = { name: "Jane Doe", age: 25 }; // object
+
+        // functions and control flow
+        function greet(personName) {
+            if (personName) {
+                return `Hello, ${personName}!`;
+            } else {
+                return "Hello!";
+            }
+        }
+
+        console.log(greet(name));
+        console.log(greet(person.name));
+        console.log(greet());
+    </script>
+</body>
+</html>
