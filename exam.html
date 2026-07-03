@@ -56,7 +56,14 @@
             }
         }
         fetchData();
-        
+        // ES6 features
+        const multiply = (x, y) => x * y;   
+        const result = multiply(4, 5);
+        console.log(`The result of multiplying 4 and 5 is: ${result}`); 
+        const [firstHobby, secondHobby] = hobbies;
+        console.log(`My first hobby is: ${firstHobby}`);
+        confirm("Do you want to see the second hobby?");
+        console.log(`My second hobby is: ${secondHobby}`);
     </script>
 
 </body>
