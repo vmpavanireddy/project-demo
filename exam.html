@@ -27,6 +27,25 @@
         console.log(greet(name));
         console.log(greet(person.name));
         console.log(greet());
+        for (let hobby of hobbies) {
+            console.log(`I enjoy ${hobby}.`);
+        }
+        function calculateSum(a, b) {
+            return a + b;
+        }
+        console.log(`The sum of 5 and 10 is: ${calculateSum(5, 10)}`);
+        // DOM manipulation
+        const heading = document.createElement("h1");
+        heading.textContent = "Welcome to the Exam Page";
+        document.body.appendChild(heading);
+        // event handling
+        const button = document.createElement("button");
+        button.textContent = "Click Me";
+        button.addEventListener("click", () => {
+            alert("Button was clicked!");
+        });
+        document.body.appendChild(button);
     </script>
+
 </body>
 </html>
