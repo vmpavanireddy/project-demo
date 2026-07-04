@@ -64,6 +64,18 @@
         console.log(`My first hobby is: ${firstHobby}`);
         confirm("Do you want to see the second hobby?");
         console.log(`My second hobby is: ${secondHobby}`);
+        // template literals
+        const message = `My name is ${name} and I am ${age} years old.`;
+        console.log(message);   
+        // error handling
+        try {
+            const invalidOperation = 10 / 0; // This will not throw an error in JavaScript, but let's simulate an error
+            if (!isFinite(invalidOperation)) {  
+                throw new Error("Division by zero is not allowed.");
+            }
+        } catch (error) {
+            console.error("Caught an error:", error.message);
+        }
     </script>
 
 </body>
