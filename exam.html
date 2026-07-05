@@ -76,6 +76,14 @@
         } catch (error) {
             console.error("Caught an error:", error.message);
         }
+        // regular expressions
+        const regex = /^[A-Za-z]+$/;
+        const testString = "HelloWorld";
+        if (regex.test(testString)) {
+            console.log(`${testString} contains only letters.`);
+        } else {
+            console.log(`${testString} contains characters other than letters.`);
+        }
     </script>
 
 </body>
