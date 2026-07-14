@@ -114,6 +114,18 @@
             .catch((error) => {
                 console.error(error);
             });
+            //
+    async/await
+    //example of using async/await with a promise
+    async function asyncFunction() {
+        try {
+            const result = await myPromise;
+            console.log(`Async/Await result: ${result}`);
+        } catch (error) {
+            console.error(`Async/Await error: ${error}`);
+        }
+    }
+    asyncFunction();
     </script>
 
 </body>
