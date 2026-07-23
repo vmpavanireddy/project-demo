@@ -147,7 +147,19 @@
         console.log("2 seconds have passed!");
     }
     delayedMessage();
-    
+    //example of using setInterval with async/await
+    async function intervalMessage() {
+        let count = 0;
+        const intervalId = setInterval(async () => {
+            count++;
+            console.log(`Interval message ${count}`);
+            if (count >= 5) {
+                clearInterval(intervalId);
+                console.log("Interval cleared after 5 messages.");
+            }
+        }, 1000);
+    }
+    intervalMessage();
     </script>
 
 </body>
