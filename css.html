@@ -51,28 +51,72 @@
             /*transform:skew(30deg);*/
             /*transform: translateX(50px) rotate(45deg) scale(1.5) skew(30deg);*/
         }
+
+        .example-aug17 {
+            padding: 30px;
+            background: #f4f4f4;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .example-aug17 h2 {
+            color: #1f3a93;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: 300px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .card button {
+            background: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            color: #1f3a93;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="box">
-                    <h1>CSS</h1>
+            <h1>CSS</h1>
         </div>
     </div>
-</body>
-x
-    <h1>GREEN STAR HOTEL</h1>
-    <h2>Customer Bill</h2>
-    <hr style="width:70%">
-    <h3>Date: <span id="date"></span></h3>
-    <!-- Input Section -->
-    <div class="input-row">
-        <label>Items:</label>
-        <select id="itemSelect">
-            <option value="Biryani">Biryani - 140</option>
-            <option value="Fried Rice">Fried Rice - 110</option>
-            <option value="Chicken Curry">Chicken Curry - 230</option>
-        </select>
 
+    <section class="example-aug17">
+        <h2>August 17 Example</h2>
+        <div class="card">
+            <h3>CSS Card Example</h3>
+            <p>This example was created on August 17.</p>
+            <button>Learn More</button>
+        </div>
+    </section>
+
+    <div class="hotel-bill">
+        <h1>GREEN STAR HOTEL</h1>
+        <h2>Customer Bill</h2>
+        <hr style="width:70%">
+        <h3>Date: <span id="date"></span></h3>
+
+        <div class="input-row">
+            <label>Items:</label>
+            <select id="itemSelect">
+                <option value="Biryani">Biryani - 140</option>
+                <option value="Fried Rice">Fried Rice - 110</option>
+                <option value="Chicken Curry">Chicken Curry - 230</option>
+            </select>
+        </div>
+    </div>
+
+</body>
 </html>
